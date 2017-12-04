@@ -1,0 +1,17 @@
+Computer science is the study of information processes.  Computer
+scientists study how to describe, predict properties of, and efficiently
+implement information processes.  <!--When confronted with a problem,
+computer scientists do not just attempt to solve it.  Instead, they
+think about a problem as a mapping between its inputs and desired
+outputs, develop a systematic sequence of steps for solving the problem
+for any possible input, and consider how the number of steps required to
+solve the problem scales as the input size increases.  Thinking about
+problems this way has practical value since it leads to programs
+computers can execute to solve problems remarkably quickly, but also
+impacts the way we think about defining and solving problems regardless
+of whether or not a computer is involved.
+</p>-->
+This book introduces the most important ideas in computing.  It focuses
+on how to describe information processes by defining procedures, how to
+analyze the costs required to carry out a procedure, and the fundamental
+limits of what can and cannot be computed mechanically.
