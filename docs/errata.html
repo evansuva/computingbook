@@ -57,6 +57,10 @@ extra closing parentheses at the end (thanks to Ezio Da Fonseca)
   (make-adjustable-counter))</tt>.  (Thanks to Ezio Da Fonseca,
   corrected in book sources, 2013-10-22)
 
+        <li> p. 233 - The definition of <tt>cons</tt> should use the defined special form <tt>ifp</tt>, instead of <tt>if</tt>: 
+        <pre>
+           (define cons (lambda (a b) (lambda (p) (ifp p a b))))
+        </pre> (Thanks to Ervin Varga) (24 June 2019).
 </ul>
 
 
