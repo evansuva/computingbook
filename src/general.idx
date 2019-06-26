@@ -1,0 +1,337 @@
+\indexentry{MIT}{ix}
+\indexentry{information processes|textbf}{2}
+\indexentry{procedure|textbf}{2}
+\indexentry{algorithm|textbf}{2}
+\indexentry{coffee}{2}
+\indexentry{computer|textbf}{3}
+\indexentry{information|textbf}{3}
+\indexentry{bit|textbf}{4}
+\indexentry{binary question|textbf}{4}
+\indexentry{logarithm|textbf}{5}
+\indexentry{binary tree|textbf}{5}
+\indexentry{depth|textbf}{6}
+\indexentry{binary numbers|textbf}{8}
+\indexentry{discrete}{9}
+\indexentry{countable|textbf}{9}
+\indexentry{diagonalization|textbf}{9}
+\indexentry{pixel|textbf}{11}
+\indexentry{Apollo Guidance Computer}{12}
+\indexentry{abstraction|textbf}{15}
+\indexentry{recursive definition}{17}
+\indexentry{belittle}{19}
+\indexentry{language|textbf}{19}
+\indexentry{surface forms}{19}
+\indexentry{natural language|textbf}{19}
+\indexentry{string|textbf}{19}
+\indexentry{alphabet|textbf}{19}
+\indexentry{primitive}{20}
+\indexentry{morpheme}{20}
+\indexentry{means of combination}{20}
+\indexentry{means of abstraction}{21}
+\indexentry{truthiness}{21}
+\indexentry{odometer}{22}
+\indexentry{shag}{22}
+\indexentry{belittle}{22}
+\indexentry{authentication}{22}
+\indexentry{belittle}{22}
+\indexentry{recursive transition network|textbf}{22}
+\indexentry{recursive definition}{23}
+\indexentry{stack|textbf}{24}
+\indexentry{grammar|textbf}{26}
+\indexentry{Backus-Naur Form}{26}
+\indexentry{Fortran}{26}
+\indexentry{derivation|textbf}{27}
+\indexentry{parse tree|textbf}{27}
+\indexentry{recursive grammar}{27}
+\indexentry{base case|textbf}{28}
+\indexentry{domain names}{29}
+\indexentry{proof by construction|textbf}{30}
+\indexentry{Analytical Engine}{35}
+\indexentry{natural languages}{36}
+\indexentry{means of abstraction}{37}
+\indexentry{programming language|textbf}{37}
+\indexentry{abstraction}{38}
+\indexentry{machine code}{38}
+\indexentry{compiler|textbf}{38}
+\indexentry{interpreter|textbf}{38}
+\indexentry{Scheme}{39}
+\indexentry{LISP}{39}
+\indexentry{DrRacket}{40}
+\indexentry{expression|textbf}{40}
+\indexentry{evaluation|textbf}{40}
+\indexentry{primitive expressions}{40}
+\indexentry{numbers}{40}
+\indexentry{Boolean}{40}
+\indexentry{primitive procedures}{40}
+\indexentry{primitive procedures}{41}
+\indexentry{function|textbf}{41}
+\indexentry{operands|textbf}{42}
+\indexentry{arguments|textbf}{42}
+\indexentry{definition}{44}
+\indexentry{abstraction}{44}
+\indexentry{name}{44}
+\indexentry{procedure}{45}
+\indexentry{state}{45}
+\indexentry{procedure}{45}
+\indexentry{lambda}{45}
+\indexentry{higher-order procedure|textbf}{46}
+\indexentry{application}{46}
+\indexentry{square}{46}
+\indexentry{special form|textbf}{48}
+\indexentry{rules of evaluation}{50}
+\indexentry{problem|textbf}{53}
+\indexentry{algorithm}{53}
+\indexentry{divide-and-conquer|textbf}{54}
+\indexentry{composition}{54}
+\indexentry{higher-order procedure|textbf}{55}
+\indexentry{inc}{55}
+\indexentry{fcompose}{55}
+\indexentry{compose}{55}
+\indexentry{recursive definition|(}{56}
+\indexentry{base case|textbf}{57}
+\indexentry{factorial}{58}
+\indexentry{factorial|textbf}{58}
+\indexentry{accumulate}{60}
+\indexentry{modulo}{61}
+\indexentry{tail recursive|textbf}{62}
+\indexentry{square root}{63}
+\indexentry{evaluation stack}{67}
+\indexentry{recursive definition|)}{67}
+\indexentry{debugging|textbf}{68}
+\indexentry{printing}{68}
+\indexentry{display}{68}
+\indexentry{newline}{68}
+\indexentry{printing}{69}
+\indexentry{printf}{69}
+\indexentry{side effects|textbf}{69}
+\indexentry{tracing}{69}
+\indexentry{$\pi $}{70}
+\indexentry{expt}{71}
+\indexentry{games}{71}
+\indexentry{Nim}{71}
+\indexentry{Survivor}{71}
+\indexentry{Corner the Queen}{72}
+\indexentry{scalar|textbf}{75}
+\indexentry{types}{75}
+\indexentry{Boolean}{75}
+\indexentry{Number}{75}
+\indexentry{datatype|textbf}{75}
+\indexentry{procedure}{76}
+\indexentry{bigger}{76}
+\indexentry{Pair|(}{77}
+\indexentry{pair|textbf}{77}
+\indexentry{cons}{77}
+\indexentry{car}{77}
+\indexentry{cdr}{77}
+\indexentry{Pair|)}{80}
+\indexentry{list|(}{81}
+\indexentry{any-uple}{81}
+\indexentry{null|textbf}{81}
+\indexentry{null?}{81}
+\indexentry{list|textbf}{81}
+\indexentry{list|)}{82}
+\indexentry{list procedures}{82}
+\indexentry{length}{83}
+\indexentry{list-length}{83}
+\indexentry{list-sum}{84}
+\indexentry{list-product}{84}
+\indexentry{accumulators}{84}
+\indexentry{list-get-element}{85}
+\indexentry{defensive programming|textbf}{86}
+\indexentry{list-map}{86}
+\indexentry{map}{86}
+\indexentry{filtering}{87}
+\indexentry{append}{88}
+\indexentry{list-append}{88}
+\indexentry{reverse}{89}
+\indexentry{list-reverse}{89}
+\indexentry{intsto}{89}
+\indexentry{factorial}{90}
+\indexentry{flattening lists}{90}
+\indexentry{list-flatten}{90}
+\indexentry{Pascal's Triangle}{91}
+\indexentry{binomial expansion}{92}
+\indexentry{data abstraction|textbf}{92}
+\indexentry{brute force|textbf}{93}
+\indexentry{tagged list|textbf}{94}
+\indexentry{Symbol}{94}
+\indexentry{eq?}{94}
+\indexentry{format}{94}
+\indexentry{defensive programming}{95}
+\indexentry{recursive definition}{102}
+\indexentry{universality}{102}
+\indexentry{universal programming language|textbf}{102}
+\indexentry{abstraction}{102}
+\indexentry{computing machines}{106}
+\indexentry{counting}{106}
+\indexentry{khipu}{106}
+\indexentry{abacus}{106}
+\indexentry{Pascaline}{106}
+\indexentry{programmability}{107}
+\indexentry{Boolean}{108}
+\indexentry{Boolean logic|textbf}{108}
+\indexentry{truth table|textbf}{109}
+\indexentry{digital abstraction|textbf}{110}
+\indexentry{Turing Machine}{118}
+\indexentry{universal computing machine|textbf}{120}
+\indexentry{Entscheidungsproblem}{122}
+\indexentry{Lambda calculus}{122}
+\indexentry{Enigma}{122}
+\indexentry{Bletchley Park}{122}
+\indexentry{Analytical Engine}{123}
+\indexentry{fibonacci}{127}
+\indexentry{dynamic programming|textbf}{129}
+\indexentry{asymptotic operators}{130}
+\indexentry{$O$}{130}
+\indexentry{fibonacci}{131}
+\indexentry{$\Omega$}{133}
+\indexentry{$\Theta$}{134}
+\indexentry{measuring input size}{136}
+\indexentry{Turing Machine}{138}
+\indexentry{worst case|textbf}{138}
+\indexentry{growth rates}{139}
+\indexentry{constant time|textbf}{140}
+\indexentry{linearly|textbf}{140}
+\indexentry{quadratically|textbf}{145}
+\indexentry{exponential}{147}
+\indexentry{intractability}{147}
+\indexentry{power set|textbf}{148}
+\indexentry{pegboard puzzle}{151}
+\indexentry{sorting|(}{153}
+\indexentry{best-first-sort}{153}
+\indexentry{transitive|textbf}{153}
+\indexentry{equal?}{155}
+\indexentry{let expression}{156}
+\indexentry{random}{157}
+\indexentry{logarithmic growth}{161}
+\indexentry{sorted binary tree|textbf}{162}
+\indexentry{binary tree}{162}
+\indexentry{tree}{162}
+\indexentry{depth|textbf}{163}
+\indexentry{well-balanced|textbf}{163}
+\indexentry{sorting|)}{168}
+\indexentry{searching}{168}
+\indexentry{pegboard puzzle}{168}
+\indexentry{list-search}{168}
+\indexentry{binary tree}{169}
+\indexentry{binary search}{169}
+\indexentry{indexed search}{170}
+\indexentry{String}{170}
+\indexentry{web}{174}
+\indexentry{URL}{174}
+\indexentry{web-get}{175}
+\indexentry{web crawler|textbf}{179}
+\indexentry{relaxation|textbf}{180}
+\indexentry{mutators|textbf}{181}
+\indexentry{assignment}{181}
+\indexentry{set!}{181}
+\indexentry{assignment|textbf}{181}
+\indexentry{side effects}{181}
+\indexentry{begin}{182}
+\indexentry{definition}{182}
+\indexentry{counter}{183}
+\indexentry{substitution}{183}
+\indexentry{place|textbf}{184}
+\indexentry{frame|textbf}{184}
+\indexentry{environment|textbf}{184}
+\indexentry{global environment}{184}
+\indexentry{set-mcar!}{188}
+\indexentry{set-mcdr!}{188}
+\indexentry{mutable pair}{188}
+\indexentry{mcons}{188}
+\indexentry{immutable|textbf}{188}
+\indexentry{mutable lists}{189}
+\indexentry{mlist}{189}
+\indexentry{imperative programming}{190}
+\indexentry{functional programming}{190}
+\indexentry{imperative programming|textbf}{190}
+\indexentry{list-append}{192}
+\indexentry{mlist-append!}{192}
+\indexentry{aliasing}{192}
+\indexentry{aliasing|textbf}{192}
+\indexentry{eq?}{193}
+\indexentry{while loop|textbf}{194}
+\indexentry{Python}{195}
+\indexentry{repeat-until|textbf}{195}
+\indexentry{object-ori\discretionary {-}{}{}en\discretionary {-}{}{}ted programming|textbf}{197}
+\indexentry{inheritance|textbf}{198}
+\indexentry{counter}{198}
+\indexentry{encapsulation}{198}
+\indexentry{encapsulation|textbf}{198}
+\indexentry{messages}{199}
+\indexentry{symbol}{200}
+\indexentry{conditional expression}{200}
+\indexentry{cond}{200}
+\indexentry{else}{201}
+\indexentry{definition}{201}
+\indexentry{apply}{202}
+\indexentry{object|textbf}{202}
+\indexentry{instance variables|textbf}{202}
+\indexentry{methods|textbf}{202}
+\indexentry{invoke|textbf}{202}
+\indexentry{class|textbf}{202}
+\indexentry{constructors|textbf}{202}
+\indexentry{subclass|textbf}{203}
+\indexentry{superclass|textbf}{203}
+\indexentry{inherits|textbf}{204}
+\indexentry{override|textbf}{207}
+\indexentry{dynamic dispatch|textbf}{209}
+\indexentry{Whirlwind}{210}
+\indexentry{ENIAC}{210}
+\indexentry{MIT}{210}
+\indexentry{magnetic-core memory}{211}
+\indexentry{Digital Equipment Corporation}{211}
+\indexentry{MIT}{211}
+\indexentry{Sketchpad}{211}
+\indexentry{Simula}{211}
+\indexentry{Smalltalk}{212}
+\indexentry{interpreter|textbf}{215}
+\indexentry{parser|textbf}{215}
+\indexentry{evaluator|textbf}{215}
+\indexentry{tokenizer|textbf}{217}
+\indexentry{token|textbf}{217}
+\indexentry{assignment}{218}
+\indexentry{precedence|textbf}{219}
+\indexentry{List (Python)}{220}
+\indexentry{string}{221}
+\indexentry{dictionary}{222}
+\indexentry{Objects (Python)}{223}
+\indexentry{Methods (Python)}{223}
+\indexentry{parsing}{225}
+\indexentry{recursive descent}{226}
+\indexentry{recursive descent|textbf}{226}
+\indexentry{evaluator}{227}
+\indexentry{primitives}{227}
+\indexentry{class}{230}
+\indexentry{lazy evaluation}{233}
+\indexentry{lazy evaluation|textbf}{233}
+\indexentry{eager evaluation|textbf}{234}
+\indexentry{thunk|textbf}{234}
+\indexentry{thunk}{234}
+\indexentry{xkcd}{239}
+\indexentry{computability|textbf}{241}
+\indexentry{computable}{241}
+\indexentry{noncomputable}{241}
+\indexentry{syllogisms|textbf}{241}
+\indexentry{Organon}{241}
+\indexentry{axiomatic system|textbf}{241}
+\indexentry{Elements}{241}
+\indexentry{postulate}{241}
+\indexentry{proposition|textbf}{242}
+\indexentry{proof|textbf}{242}
+\indexentry{consistent|textbf}{242}
+\indexentry{complete|textbf}{242}
+\indexentry{Russell's paradox|textbf}{243}
+\indexentry{Principia Mathematica|textbf}{244}
+\indexentry{Epimenides paradox}{244}
+\indexentry{incompleteness}{244}
+\indexentry{halting problem}{245}
+\indexentry{computable|textbf}{245}
+\indexentry{noncomputable|textbf}{245}
+\indexentry{Goldbach's Conjecture}{246}
+\indexentry{Universal Turing Machine|textbf}{248}
+\indexentry{universal programming language|textbf}{249}
+\indexentry{reduction|textbf}{250}
+\indexentry{reducible|textbf}{250}
+\indexentry{virus}{250}
+\indexentry{busy beaver problem}{253}

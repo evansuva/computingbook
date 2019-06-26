@@ -1,0 +1,475 @@
+%%%
+%%% style.sty
+%%%
+
+%%% from http://www.f.kth.se/~ante/latex.php
+\setlength{\marginparwidth}{1.0in}
+%\let\oldmarginpar\marginpar
+%\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]%
+%                           {\raggedright\footnotesize #1}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.5ex}
+
+\setlength{\floatsep}{0.5ex}
+\setlength{\textfloatsep}{0.0ex}
+\setlength{\abovecaptionskip}{0.25ex}
+\setlength{\belowcaptionskip}{1.5ex}
+
+%%%
+%%% Colors
+%%%
+
+\definecolor{darkblue}{rgb}{0.1,0,0.55} 
+\definecolor{darkgreen}{rgb}{0.1,0.55,0.1} 
+\definecolor{purple}{rgb}{0.8,0.0,0.8}
+
+%%%
+%%% Quotes
+%%%
+
+\newcommand{\chapquote}[2]{\begin{flushright}\parbox{10cm}{
+   \setlength{\parskip}{0.5ex}\setlength{\parindent}{0em}\footnotesize \noindent {\raggedright {\em #1}\hfill \\} 
+   {\raggedleft #2 \\}}\end{flushright}}
+
+\newcommand{\chapquoter}[2]{\begin{flushright}\parbox{10cm}{
+   \setlength{\parskip}{0.5ex}\setlength{\parindent}{0em}\footnotesize \noindent {\raggedleft {\em #1}\hfill \\} 
+   {\raggedleft #2 \\}}\end{flushright}}
+
+\newcommand{\chapquotew}[3]{\begin{flushright}\parbox{#3}{
+   \setlength{\parskip}{0.5ex}\setlength{\parindent}{0em}\footnotesize \noindent {\raggedleft {\em #1}\hfill \\} 
+   {\raggedleft #2 \\}}\end{flushright}}
+
+\newcommand{\chapquotewl}[3]{\parbox{#3}{\setlength{\parskip}{0.5ex}\setlength{\parindent}{0em}
+   \footnotesize \noindent {\raggedright {\em #1}\hfill \\} {\raggedright #2 \\}}}
+
+%%%
+%%% Margin Quotes and Pictures
+%%%
+
+\newcommand{\marginquote}[2]{\marginpar[\footnotesize \raggedleft {\em #1} \\ 
+                                        \scriptsize #2]
+                            {\footnotesize \raggedright {\em #1} \\ \scriptsize #2}}
+\newcommand{\sidequote}{\marginquote}
+
+%\newcommand{\longquote}[2]{\vspace*{0.2ex}{\parbox{12cm}{\setlength{\parskip}{0.5ex}\setlength{\parindent}{0em}\noindent{\flushleft \small #1\hfill\\ \raggedleft #2\\}\vskip 1ex}}}
+
+\newcommand{\longquote}[2]{\begin{center}\begin{minipage}[c]{0.92\textwidth}\small\setlength{\parskip}{0.5ex}\setlength{\parindent}{0em}\noindent #1 \par {\raggedleft #2\\} \end{minipage}\end{center}}
+
+\newcommand{\margintag}[1]{\mbox{}\marginpar[\footnotesize \raggedleft \hspace{0pt} 
+                           \em \textcolor{blue}{#1}]{\footnotesize \raggedright \em \textcolor{blue}{#1}}}
+
+\newcommand{\indexeddefinition}[2]{\index{general}{#2|textbf}\emph{#1}\mbox{}\marginpar[\footnotesize \raggedleft \hspace{0pt} \em \textcolor{blue}{#1}]
+                            {\footnotesize \raggedright \em \textcolor{blue}{#1}}}
+
+%% can't have lowercase here, messes up alphabetizing?
+\newcommand{\definition}[1]{\index{general}{#1|textbf}\emph{#1}\mbox{}\marginpar[\footnotesize \raggedleft \hspace{0pt} \em \textcolor{blue}{#1}]
+                            {\footnotesize \raggedright \em \textcolor{blue}{#1}}}
+
+
+\newcommand{\sidenote}[1]{\marginpar[\footnotesize \raggedleft #1]{\footnotesize \raggedright #1}}
+\newcommand{\marginnote}{\sidenote}
+
+\newcommand{\sidepicture}[4]{
+   \marginpar{\setlength{\baselineskip}{4pt}\centering{\scalebox{#1}{\includegraphics{#2}}}\\
+   \setlength{\parskip}{5pt}{\bf\footnotesize #3}\\ \tiny #4}}
+\newcommand{\sidepicturenocap}[2]{
+   \marginpar{\begin{center}{\scalebox{#1}{\includegraphics{#2}}}\end{center}}}
+
+%%%\newcommand{\chintrac}{Chapter~13}
+
+%%%
+%%% Captions
+%%%
+
+% based on: http://dcwww.camd.dtu.dk/~schiotz/comp/LatexTips/LatexTips.html#captfont
+% Different font in captions
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\bf #1. #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\bf #1. #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+\newcommand{\subcap}[1]{\vspace*{-1ex}\centering{\parbox{11cm}{\footnotesize #1}\vskip 1ex}}
+\newcommand{\subcapw}[1]{\vspace*{-1ex}\centering{\parbox{12cm}{\setlength{\parskip}{1.0ex}\footnotesize #1\vskip 1ex}}}
+\newcommand{\subcapc}[1]{\vspace*{-1ex}\centering{\footnotesize #1}}
+\newcommand{\subcaps}[1]{\vspace*{0ex}{\parbox{11.8cm}\tiny #1\vskip 1ex}}
+
+\newcommand{\pevalsto}{$\Rightarrow$\ }
+\newcommand{\evalsto}{$\Rightarrow$\ }
+
+\newenvironment{pythoninteracts}
+  {\begin{smallquote}\begin{tabbing}\hspace*{3.5cm}\=\kill}
+  {\end{tabbing}\vspace*{-0.5ex}\end{smallquote}}
+
+\newenvironment{pythoninteractsm}[1]
+  {\begin{smallquote}\begin{tabbing}\pycode|#1|\qquad \=\kill}
+  {\end{tabbing}\vspace*{-0.5ex}\end{smallquote}}
+
+\newcommand{\pyi}[2]{{$\gg$} \pycode|#1|\>\pevalsto \pycode|#2|\\}
+\newcommand{\pyl}[2]{{$\gg$} \pycode|#1|\\ \ \>\pevalsto \pycode|#2|\\}
+\newcommand{\pye}[2]{{$\gg$} \pycode|#1|\>\pevalsto \pbugresult{#2}\\}
+\newcommand{\pyn}[1]{{$\gg$} \pycode|#1|\>\\}
+
+%%%
+%%% BNF Grammars
+%%%
+
+\newcommand{\nonterminal}[1]{{\sl #1}}
+\newcommand{\terminal}[1] {{\textbf{#1}}}
+\newcommand{\produces}{::$\Rightarrow$}
+\newcommand{\bnfruleplain}[2]{\hspace*{1em}\nonterminal{#1}\quad\produces\quad#2 \\}
+\newcommand{\bnfshowrule}[2]{\nonterminal{#1} \produces\ #2}
+
+\newenvironment{bnfgrammar}{
+   \begin{centernospace}\begin{tabbing} \hspace*{10em}\=\ \produces\ \= \kill}{\end{tabbing}\end{centernospace}}
+
+% bnfgrammarm: argument is the longest left hand side for setting up spacing
+\newenvironment{bnfgrammarm}[1]
+  {\begin{smallquote}\begin{minipage}[t]{1.0\textwidth}\begin{tabbing} \nonterminal{#1}\ \=\ \produces\ \=\kill}
+  {\end{tabbing}\end{minipage}\end{smallquote}\vspace*{-1ex}}
+
+% bnfgrammarm: argument is the longest left hand side for setting up spacing
+\newenvironment{bnfgrammarmc}[1]
+  {\begin{centernospace}\begin{minipage}[t]{1.0\textwidth}\begin{tabbing} \nonterminal{#1}\ \=\ \produces\ \=\kill}
+  {\end{tabbing}\end{minipage}\end{centernospace}\vspace*{-1ex}}
+
+\newenvironment{bnfgrammarn}
+   {\begin{centernospace}\begin{tabbing} \hspace*{3em}\=\hspace*{10em}\=\ \produces\ \= \kill}
+   {\end{tabbing}\end{centernospace}}
+
+\newenvironment{bnfgrammarmn}[1]
+   {\begin{centernospace}\begin{tabbing}\hspace*{3em}\=\hspace*{3em}\=\nonterminal{#1}\ \=\ \produces\ \= \kill}
+   {\end{tabbing}\end{centernospace}}
+
+\newcommand{\bnfruleg}[2]{\centering
+   \begin{tabular}{p{9.5em}p{2.5em}p{21em}}\nonterminal{#1} & \produces & \raggedright #2 \tabularnewline \end{tabular}}
+
+\newcommand{\bnfrule}[2]{\hfill\nonterminal{#1}\>\produces\>#2\\}
+
+\newcommand{\bnfrulen}[3]{\>\hfill\emph{#1.}\>\nonterminal{#2}\>\produces\>#3\\}
+
+\newenvironment{widen}{\begin{minipage}[t]{1.1\textwidth}}{\end{minipage}}
+
+\newenvironment{centernospace}{\begin{center}\vspace*{-6pt}}{\end{center}\vspace*{-6pt}}
+
+%%%
+%%% Formatting
+%%%
+
+\renewcommand{\bold}[1]{{\textbf{#1}}}
+\newcommand{\symbolfont}[1]{{\sffamily #1}}
+
+
+\newcommand{\tagpar}[1]{\bold{#1. }}
+\newcommand{\shortsection}[1]{\textbf{#1. }}
+
+\newcommand{\evalrule}[1]{\begin{quote}\raggedright #1\end{quote}}
+
+\newcommand{\mevalrule}[2]{\begin{center}\vspace*{-6pt}\begin{minipage}[c]{0.9\textwidth}\setlength{\parindent}{0em}\setlength{\parskip}{1.5ex}{\bf #1.} #2\end{minipage}\end{center}}
+\newcommand{\mevalrulef}[2]{\begin{center}\vspace*{-6pt}\begin{minipage}[c]{0.9\textwidth}\setlength{\parindent}{0em}\setlength{\parskip}{1.5ex}#1. #2\end{minipage}\end{center}}
+
+%\newenvironment{code}{\begin{quote}}{\end{quote}}
+\newenvironment{code}{\vspace*{-2ex}\begin{list}{}{%
+  \setlength\leftmargin{1em}\setlength\labelwidth{0pt}\setlength\itemindent{0pt}}\item[]}{\end{list}\vspace*{-1.3ex}} % this is still used for formatting interactions
+\newenvironment{enumtight}{\vspace*{-2ex}\begin{enumerate}\setlength{\itemsep}{0cm} \setlength{\parskip}{0cm}\setlength{\parskip}{0cm}\setlength{\parsep}{3pt}\setlength{\topsep}{3pt}\setlength{\partopsep}{0pt}}{\end{enumerate}\vspace*{-1.3ex}}
+\newenvironment{itemtight}{\vspace*{-2ex}\begin{itemize}\setlength{\itemsep}{0cm} \setlength{\parskip}{0cm}\setlength{\parsep}{3pt} \setlength{\topsep}{3pt}\setlength{\partopsep}{0pt}}{\end{itemize}\vspace*{-1.3ex}}
+
+\newenvironment{smallquote}{\vspace*{-2ex}\begin{list}{}{%
+  \setlength\rightmargin{1.5em}\setlength\leftmargin{1.5em}\setlength\labelwidth{0pt}\setlength\itemindent{0pt}}\item[]}{\end{list}\vspace*{-1.3ex}} % this is still used for formatting interactions
+
+\newenvironment{descriptionlist}
+  {\begin{list}{}{\setlength\leftmargin{0.3in}
+                  \setlength\labelwidth{0pt}%
+                  \setlength\itemindent{-0.15in}%
+                  \setlength\topsep{0pt}
+                  \setlength\itemsep{0pt}
+                  }}
+                  {\end{list}}
+
+\newenvironment{tightdescriptionlist}
+  {\begin{list}{}{\setlength\leftmargin{0.5in}
+                  \setlength\labelwidth{0pt}%
+                  \setlength\itemindent{-0.15in}%
+                  \setlength\topsep{0pt}
+                  \setlength\itemsep{-3pt}
+                  }}
+                  {\end{list}}
+                  
+\newenvironment{procedurelist}
+  {
+  \begin{list}{}{ \renewcommand\makelabel[1]{##1\mbox{}\\}
+  								\setlength\leftmargin{0.5in}
+                  \setlength\labelwidth{0pt}%
+                  \setlength\itemindent{-0.15in}%
+                  \setlength\topsep{0pt}
+                  \setlength\itemsep{-3pt}
+                  }}
+                  {\end{list}}
+                  
+\newcommand{\forcenl}{\ \\}
+\newcommand{\function}[1]{\emph{#1}}
+\newcommand{\var}[1]{\emph{#1}}
+\newcommand{\sresult}[1]{{\sffamily {\small #1}}}
+
+\newcommand{\charme}[1]{\texttt{#1}}
+\newcommand{\scharme}[1]{\texttt{#1}}
+\newcommand{\lzcharme}[1]{\texttt{#1}}
+
+\newcommand{\keyword}[1]{{\sffamily #1}}
+
+\newcommand{\pycode}{\lstinline} % active style must be python style
+\newcommand{\presult}{\lstinline}
+\newcommand{\pbugresult}[1]{\textcolor{red}{\sffamily #1}}
+\newcommand{\bugresult}[1]{{\scalebox{0.3}{\includegraphics{images/stop-32x32.png}}} \textcolor{red}{\sffamily #1}}
+
+\newcommand{\tmtext}[1]{{\tt #1}}
+\newcommand{\bits}[1]{{\sf #1}}
+\newcommand{\bit}[1]{{\sf #1}}
+
+\newcommand{\snumber}[1]{{\sf \small #1}}
+\newcommand{\soutput}[1]{{\sffamily {\small {\sl #1}}}}
+
+\newcommand{\problemold}[3]
+   {\begin{tabular}{rp{4em}p{20em}} \emph{#1} & \bold{Input:} & \raggedright #2 \tabularnewline 
+                                                               & \bold{Output:} & \raggedright #3 \tabularnewline 
+     \end{tabular}}
+ 
+ 
+\newcommand{\problemname}[1]{{\sc\em #1}}
+
+\newcommand{\problem}[3]
+{
+\begin{smallquote}
+{\centering \problemname{#1}\\}
+\begin{hangparas}{.25in}{1}
+\bold{Input:} #2
+
+\bold{Output:} #3
+\end{hangparas}
+\end{smallquote}
+}
+                                                                            
+%%\newcommand{\url}[1]{{\sffamily {\small \em #1}}}
+
+\newcommand{\groupcontent}[1]{\begin{minipage}[t]{1.0\textwidth}#1\end{minipage}}
+
+%\renewenvironment{theindex}
+%   {\chapter*{\indexname} %
+%    \setlength\parindent{ 0pt} \setlength\parskip{ 0pt plus 0.3pt} %
+%    \setlength\columnseprule{ 0pt} \setlength\columnsep{ 35pt}%
+%    \let\item\@idxitem}
+%   {}
+
+
+%%%
+%%% Page Headers and Footers
+%%%
+
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyhead[RE]{\nouppercase{\bfseries \rightmark}} 
+\fancyhead[LO]{\nouppercase{\bfseries \leftmark}} 
+\fancyhead[LE,RO]{\thepage}
+
+%\fancyhead[RE]{\iffloatpage{}{\nouppercase{\bfseries \rightmark}}} 
+%\fancyhead[LO]{\iffloatpage{}{\nouppercase{\bfseries \leftmark}}} 
+%\fancyhead[LE,RO]{\iffloatpage{}{\thepage}}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+% http://www.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+
+\fancypagestyle{plain}{
+  \fancyhf{} 
+ % \fancyfoot[C]{\fbox{\footnotesize David Evans, \emph{Computing: Explorations in Language, Logic, and Machines}, \today}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+%%%
+%%% Temporary Markers
+%%%
+
+\newcommand{\TODO}[1]{\hrule \textbf{TODO:} #1 \hrule }
+\newcommand{\LATER}[1]{}
+\newcommand{\rnote}[1]{\begin{quote}{\em #1}\end{quote}}
+
+\newcommand{\topics}[1]{}
+\newcommand{\cut}[1]{}
+
+%%%
+%%% Math Mode Text
+%%% 
+
+\newcommand{\Fibonacci}{\textrm{\emph{Fibonacci}}} % in math mode
+\newcommand{\RunningTime}{\textrm{\emph{Max-Steps}}} % in math mode
+\newcommand{\MaxSteps}{\textrm{\emph{Max-Steps}}_{\textrm{\textsl{Proc}}}}
+\newcommand{\RunningTimeL}{\textrm{\emph{Max-Steps}}_{\textrm{\emph{list-append}}}} % in math mode
+\newcommand{\TreeNodes}{\textrm{\emph{TreeNodes}}} % in math mode
+\newcommand{\TreeLeaves}{\textrm{\emph{TreeLeaves}}} % in math mode
+
+%%%
+%%% Special Symbols
+%%%
+
+\newcommand{\tb}{}
+\newcommand{\true}{\var{true}}
+\newcommand{\false}{\var{false}}
+\newcommand{\True}{\pycode|True|}
+\newcommand{\False}{\pycode|False|}
+
+\newcommand{\lparen}{(}
+\newcommand{\rparen}{)}
+
+\newcommand{\Goedel}{G\"{o}del}
+\newcommand{\Godel}{G\"{o}del}
+\newcommand{\GEB}{\emph{GEB}}
+\newcommand{\SICP}{Abelson \& Sussman, \emph{Structure and Interpretation of Computer Programs}}
+
+\newcommand{\bO}{{\bf \sf 0}}
+\newcommand{\bI}{{\bf \sf 1}}
+
+\newcommand{\hash}{{\tt \#}}
+
+%%%
+%%% Evaluations
+%%% 
+
+\newenvironment{aside}{\hfill\renewcommand\makeLineNumber{\rlap{\hspace{\textwidth}}}\color{lightgrey}\footnotesize}{\color{black}\par}
+\newenvironment{scaside}{\hfill\renewcommand\makeLineNumber{\rlap{\hspace{\textwidth}}}\color{lightgrey}\footnotesize}{\color{black}}
+\newcommand{\sidemark}[1]{\begin{aside}{\em #1}\end{aside}}
+\newenvironment{saside}{\hfill \color{lightgrey}\footnotesize}{\color{black}\par}
+\newcounter{evalstep}[chapter]
+\newcommand{\evalstart}{\setcounter{evalstep}{0} \linenumbers[0] \setlength{\parskip}{0.1ex}}
+		%	{\begin{tabbing} \hspace*{2em}\=\kill\setcounter{evalstep}{0}}
+\newcommand{\sevalstep}{\stepcounter{evalstep} \linenumbers[\theevalstep]} %  \theevalstep. \>}
+\newcommand{\evalstep}[2]{\sevalstep \schemesmall{#1} \par \begin{aside} #2 \end{aside}} % begin{minipage}[r]{0.90\textwidth} #2 \end{minipage}}
+\newcommand{\evalstepa}[2]{\sevalstep \schemesmall{#1} \begin{saside} #2 \end{saside}} % begin{minipage}[r]{0.90\textwidth} #2 
+\newcommand{\evalstepb}[2]{\sevalstep \schemesmall{#1} \par \begin{aside} #2 \end{aside}} % begin{minipage}[r]{0.90\textwidth} #2 
+\newcommand{\revalstep}[2]{\sevalstep \schemesmall{#1} \par}
+\newcommand{\evalsteptiny}[2]{\sevalstep \schemetiny{#1} \par \begin{aside} #2 \end{aside}}
+\newcommand{\hevalstep}[2]{\stepcounter{evalstep}}
+\newcommand{\hevalsteptiny}[2]{\stepcounter{evalstep}}
+\newcommand{\evalindent}{\addtolength{\parindent}{0.6cm}} %\end{tabbing}\begin{tabbing}\hspace*{4em}\=\kill}
+\newcommand{\evalunindent}{\addtolength{\parindent}{-0.6cm}} %\end{tabbing}\begin{tabbing}\hspace*{2em}\=\kill}
+\newcommand{\evalend}{\nolinenumbers \setlength{\parskip}{1.5ex}} %\end{tabbing}}
+\newcommand{\evalmark}[1]{\bold{#1}}
+%\newcommand{\aside}[1]{\hspace*{5em}#1\\}
+\newcommand{\schemesmall}[1]{\texttt{\small #1}}
+\newcommand{\schemetiny}[1]{\texttt{\footnotesize #1}}
+
+%%%
+%%% SLaTeX
+%%%
+
+\leftcodeskip=1em % 0pt plus 1fil
+\rightcodeskip=0pt plus 1fil
+\abovecodeskip=0pt
+\belowcodeskip=0pt
+
+% for StaticCharme
+\setkeyword{Number}  
+\setkeyword{Boolean}
+\setkeyword{:}
+
+\setconstant{StaticCharme>}
+\setconstant{LazyCharme>}
+\setconstant{Charme>}
+
+\setvariable{true false}  % was \setconstant
+\setvariable{trace}
+\setvariable{null} % make null always typeset in italics
+
+\setvariable{and} % these are special forms, but better typeset as variables
+\setvariable{or}
+
+\def\constantfont#1{{\mbox{\small\sf#1}}}
+\let\datafont\constantfont
+
+\setspecialsymbol{\arrow}{$\rightarrow$}
+\setspecialsymbol{\rest}{$\ldots$} 
+\setspecialsymbol{\recproc}{\textcolor{darkblue}{\textsf{\sl Recursive-Procedure}}}
+\setspecialsymbol{\basecaseres}{\textcolor{darkgreen}{\textsf{\sl Base-Case-Result}}}
+\setspecialsymbol{\accumfunc}{\textcolor{darkgreen}{\textsf{\sl Accumulator-Function}}}
+\setspecialsymbol{\value}{\textsf{\sl Value}}
+\setspecialsymbol{\List}{\textsf{\sl List}}
+\setspecialsymbol{\Expression}{\textsf{\sl Expression}}
+\setspecialsymbol{\Name}{\textsf{\sl Name}}
+\setspecialsymbol{\Type}{\textsf{\sl Type}}
+\setspecialsymbol{\Parameters}{\textsf{\sl Parameters}}
+
+\setspecialsymbol{\MoreExpressions}{\textsf{\sl MoreExpressions}}
+\setspecialsymbol{\Tree}{\textsf{\sl Tree}}
+\setspecialsymbol{\Element}{\textsf{\sl Element}}
+
+\setspecialsymbol{\CondClauseList}{\nonterminal{CondClauseList}}
+\setspecialsymbol{\CondClause}{\nonterminal{CondClause}}
+\setspecialsymbol{\OptElseClause}{\nonterminal{OptElseClause}}
+
+\setspecialsymbol{\Expressiona}{\textsf{\sl Expression$_1$}}
+\setspecialsymbol{\Expressionb}{\textsf{\sl Expression$_2$}}
+\setspecialsymbol{\Expressionk}{\textsf{\sl Expression$_k$}}
+\setspecialsymbol{\ExpressionPA}{\textsf{\sl Expression$_{p1}$}}
+\setspecialsymbol{\ExpressionPB}{\textsf{\sl Expression$_{p2}$}}
+\setspecialsymbol{\ExpressionPK}{\textsf{\sl Expression$_{pk}$}}
+
+\setspecialsymbol{\ExpressionVA}{\textsf{\sl Expression$_{c1}$}}
+\setspecialsymbol{\ExpressionVB}{\textsf{\sl Expression$_{c2}$}}
+\setspecialsymbol{\ExpressionVK}{\textsf{\sl Expression$_{ck}$}}
+\setspecialsymbol{\ExpressionVE}{\textsf{\sl Expression$_{else}$}}
+
+\setspecialsymbol{\Namea}{\textsf{\sl Name$_1$}}
+\setspecialsymbol{\Nameb}{\textsf{\sl Name$_2$}}
+\setspecialsymbol{\Namek}{\textsf{\sl Name$_k$}}
+
+\setspecialsymbol{\Bindings}{\nonterminal{Bindings}}
+\setspecialsymbol{\NameG}{\nonterminal{Name}}
+\setspecialsymbol{\Rest}{\nonterminal{Rest}}
+\setspecialsymbol{\ExpressionG}{\nonterminal{Expression}}
+\setspecialsymbol{\ExpressionBody}{\textsf{\sl Expression$_{body}$}}
+\setspecialsymbol{\ExpressionP}{\textsf{\sl Expression$_{predicate}$}}
+\setspecialsymbol{\ExpressionV}{\textsf{\sl Expression$_{consequent}$}}
+
+\setspecialsymbol{\n}{\textsf{\sl n}}
+\setspecialsymbol{\fillspace}{\underline{\ \ \ \ \ \ \ \ \ \ }}
+
+\setspecialsymbol{\ak}{$a_k$}
+\setspecialsymbol{\bk}{$b_k$}
+\setspecialsymbol{\rk}{$r_k$}
+\setspecialsymbol{\ck}{$c_k$}
+
+\setspecialsymbol{\az}{$a_0$}
+\setspecialsymbol{\bz}{$b_0$}
+\setspecialsymbol{\rz}{$r_0$}
+\setspecialsymbol{\cz}{$c_0$}
+
+\setspecialsymbol{\aone}{$a_1$}
+\setspecialsymbol{\bone}{$b_1$}
+\setspecialsymbol{\rone}{$r_1$}
+\setspecialsymbol{\cone}{$c_1$}
+
+\setspecialsymbol{\atwo}{$a_2$}
+\setspecialsymbol{\btwo}{$b_2$}
+\setspecialsymbol{\rtwo}{$r_2$}
+\setspecialsymbol{\ctwo}{$c_2$}
+
+\setspecialsymbol{\athree}{$a_3$}
+\setspecialsymbol{\bthree}{$b_3$}
+\setspecialsymbol{\rthree}{$r_3$}
+\setspecialsymbol{\cthree}{$c_3$}
+
+\setspecialsymbol{\ldots}{$\ldots$}
+\setspecialsymbol{\cdots}{$\cdots$}
+
+\setspecialsymbol{\quad}{\mbox{\quad}}
+\setspecialsymbol{\squad}{\mbox{\ }}
+

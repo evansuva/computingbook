@@ -1,0 +1,4 @@
+\begin{XTRexercise}
+\triplegoldstar Find a 5-state Turing Machine that runs for more than 47,176,870 steps, or prove that no such machine exists.
+\solution{\LATER{}}
+\end{XTRexercise}

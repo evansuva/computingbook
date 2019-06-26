@@ -1,0 +1,53 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Using three bits to distinguish eight possible values.}}{6}{figure.1.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Simple recursive transition network.}}{22}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces RTN with a cycle.}}{23}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Recursive transition network with subnetworks.}}{24}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Alternate {\sl Noun} subnetwork.}}{24}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces RTN generating ``Alice runs''.}}{25}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces System power relationships.}}{30}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Converting the {\sl Number} productions to an RTN.}}{31}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Converting the {\sl MoreDigits} productions to an RTN.}}{31}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Converting the {\sl Digit} productions to an RTN.}}{32}{figure.2.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Running a Scheme program.}}{39}{figure.3.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A procedure maps inputs to an output.}}{54}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Composition.}}{54}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Circular Composition.}}{57}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Recursive Composition.}}{58}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Cornering the Queen.}}{72}{figure.4.5}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Pegboard Puzzle.}}{93}{figure.5.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Computing \emph {and} with wine.}}{110}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Computing logical \emph {or} and \emph {not} with wine}}{111}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Computing \emph {or} with wine.}}}{111}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Computing \emph {not} with wine.}}}{111}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Computing \emph {and3} by composing two \emph {and} functions.}}{112}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Turing Machine model.}}{119}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Rules for checking balanced parentheses Turing Machine.}}{121}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Checking parentheses Turing Machine.}}{121}{figure.6.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Evaluation of \emph {fibo} procedure.}}{128}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Visualization of the sets $O(f)$, $\Omega (f)$, and $\Theta (f)$.}}{130}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Orders of Growth.}}{131}{figure.7.3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Unbalanced trees.}}{166}{figure.8.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Sample environments.}}{184}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Environment created to evaluate (\emph {bigger} {\sf \relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 3} {\sf \relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 4}).}}{186}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Environment after evaluating ({\textbf {define}} \emph {inc} (\emph {make-adder} {\sf \relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 1})).}}{187}{figure.9.3}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Environment for evaluating the body of (\emph {inc} {\sf \relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 149}).}}{188}{figure.9.4}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Mutable pair created by evaluating (\emph {set-mcdr!} \emph {pair} \emph {pair}).}}{189}{figure.9.5}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces MutableList created by evaluating (\emph {mlist} {\sf \relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 1} {\sf \relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 2} {\sf \relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 3}).}}{189}{figure.9.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Environment produced by evaluating:}}{199}{figure.10.1}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Inheritance hierarchy.}}{204}{figure.10.2}
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Counter class hierarchy.}}{209}{figure.10.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Incomplete and inconsistent axiomatic systems.}}{243}{figure.12.1}
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Universal Turing Machine.}}{249}{figure.12.2}
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Two-state Busy Beaver Machine.}}{253}{figure.12.3}

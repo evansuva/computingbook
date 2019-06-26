@@ -1,0 +1,354 @@
+\begin{theindex}
+
+  \item $O$, 130
+  \item $\Omega$, 133
+  \item $\Theta$, 134
+  \item $\pi $, 69
+
+  \indexspace
+
+  \item abacus, 106
+  \item abstraction, \textbf{15}, 38, 44, 102
+  \item accumulate, 59
+  \item accumulators, 84
+  \item algorithm, \textbf{2}, 53
+  \item aliasing, 190, \textbf{190}
+  \item alphabet, \textbf{19}
+  \item Analytical Engine, 35, 123
+  \item any-uple, 81
+  \item Apollo Guidance Computer, 12
+  \item append, 88
+  \item application, 46
+  \item apply, 199
+  \item arguments, \textbf{42}
+  \item assignment, 179, \textbf{179}, 214
+  \item asymptotic operators, 130
+  \item authentication, 22
+  \item axiomatic system, \textbf{237}
+
+  \indexspace
+
+  \item Backus-Naur Form, 26
+  \item base case, \textbf{28}, \textbf{57}
+  \item begin, 180
+  \item belittle, 19, 22
+  \item best-first-sort, 153
+  \item bigger, 76
+  \item binary numbers, \textbf{8}
+  \item binary question, \textbf{4}
+  \item binary search, 168
+  \item binary tree, \textbf{5}, 161, 168
+  \item binomial expansion, 92
+  \item bit, \textbf{4}
+  \item Bletchley Park, 122
+  \item Boolean, 40, 75, 108
+  \item Boolean logic, \textbf{108}
+  \item brute force, \textbf{93}
+  \item busy beaver problem, 249
+
+  \indexspace
+
+  \item car, 77
+  \item cdr, 77
+  \item class, \textbf{200}, 226
+  \item coffee, 2
+  \item compiler, \textbf{38}
+  \item complete, \textbf{238}
+  \item compose, 55
+  \item composition, 54
+  \item computability, \textbf{237}
+  \item computable, 237, \textbf{241}
+  \item computer, \textbf{3}
+  \item computing machines, 106
+  \item cond, 198
+  \item conditional expression, 198
+  \item cons, 77
+  \item consistent, \textbf{238}
+  \item constant time, \textbf{139}
+  \item constructors, \textbf{200}
+  \item Corner the Queen, 72
+  \item countable, \textbf{9}
+  \item counter, 181, 196
+  \item counting, 106
+
+  \indexspace
+
+  \item data abstraction, \textbf{92}
+  \item datatype, \textbf{75}
+  \item debugging, \textbf{67}
+  \item defensive programming, \textbf{86}, 95
+  \item definition, 44, 180, 199
+  \item depth, \textbf{6}, \textbf{162}
+  \item derivation, \textbf{27}
+  \item diagonalization, \textbf{9}
+  \item dictionary, 218
+  \item digital abstraction, \textbf{110}
+  \item Digital Equipment Corporation, 208
+  \item discrete, 9
+  \item display, 68
+  \item divide-and-conquer, \textbf{54}
+  \item domain names, 29
+  \item DrRacket, 40
+  \item dynamic dispatch, \textbf{206}
+  \item dynamic programming, \textbf{129}
+
+  \indexspace
+
+  \item eager evaluation, \textbf{230}
+  \item Elements, 237
+  \item else, 198
+  \item encapsulation, 196, \textbf{196}
+  \item ENIAC, 207
+  \item Enigma, 122
+  \item Entscheidungsproblem, 122
+  \item environment, \textbf{182}
+  \item Epimenides paradox, 240
+  \item eq?, 94, 191
+  \item equal?, 155
+  \item evaluation, \textbf{40}
+  \item evaluation stack, 66
+  \item evaluator, \textbf{211}, 223
+  \item exponential, 147
+  \item expression, \textbf{40}
+  \item expt, 70
+
+  \indexspace
+
+  \item factorial, 58, \textbf{58}, 90
+  \item fcompose, 55
+  \item fibonacci, 127, 131
+  \item filtering, 87
+  \item flattening lists, 90
+  \item format, 94
+  \item Fortran, 26
+  \item frame, \textbf{182}
+  \item function, \textbf{41}
+  \item functional programming, 188
+
+  \indexspace
+
+  \item games, 71
+  \item global environment, 182
+  \item Goldbach's Conjecture, 242
+  \item grammar, \textbf{26}
+  \item growth rates, 139
+
+  \indexspace
+
+  \item halting problem, 241
+  \item higher-order procedure, \textbf{46}, \textbf{55}
+
+  \indexspace
+
+  \item immutable, \textbf{186}
+  \item imperative programming, 188, \textbf{188}
+  \item inc, 55
+  \item incompleteness, 240
+  \item indexed search, 169
+  \item information, \textbf{3}
+  \item information processes, \textbf{2}
+  \item inheritance, \textbf{196}
+  \item inherits, \textbf{202}
+  \item instance variables, \textbf{199}
+  \item interpreter, \textbf{38}, \textbf{211}
+  \item intractability, 147
+  \item intsto, 89
+  \item invoke, \textbf{200}
+
+  \indexspace
+
+  \item khipu, 106
+
+  \indexspace
+
+  \item lambda, 45
+  \item Lambda calculus, 122
+  \item language, \textbf{19}
+  \item lazy evaluation, 229, \textbf{229}
+  \item length, 83
+  \item let expression, 156
+  \item linearly, \textbf{140}
+  \item LISP, 39
+  \item list, \textbf{81}, 81--82
+  \item List (Python), 216
+  \item list procedures, 82
+  \item list-append, 88, 190
+  \item list-flatten, 90
+  \item list-get-element, 85
+  \item list-length, 83
+  \item list-map, 86
+  \item list-product, 84
+  \item list-reverse, 89
+  \item list-search, 168
+  \item list-sum, 84
+  \item logarithm, \textbf{5}
+  \item logarithmic growth, 160
+
+  \indexspace
+
+  \item machine code, 38
+  \item magnetic-core memory, 208
+  \item map, 86
+  \item mcons, 186
+  \item means of abstraction, 21, 37
+  \item means of combination, 20
+  \item measuring input size, 136
+  \item messages, 197
+  \item methods, \textbf{200}
+  \item Methods (Python), 219
+  \item MIT, ix, 207, 208
+  \item mlist, 187
+  \item mlist-append, 190
+  \item modulo, 61
+  \item morpheme, 20
+  \item mutable lists, 187
+  \item mutable pair, 186
+  \item mutators, \textbf{179}
+
+  \indexspace
+
+  \item name, 44
+  \item natural language, \textbf{19}
+  \item natural languages, 36
+  \item newline, 68
+  \item Nim, 71
+  \item noncomputable, 237, \textbf{241}
+  \item null, \textbf{81}
+  \item null?, 81
+  \item Number, 75
+  \item numbers, 40
+
+  \indexspace
+
+  \item object, \textbf{199}
+  \item object-ori\discretionary {-}{}{}en\discretionary {-}{}{}ted programming, 
+		\textbf{195}
+  \item Objects (Python), 219
+  \item odometer, 22
+  \item operands, \textbf{42}
+  \item Organon, 237
+  \item override, \textbf{204}
+
+  \indexspace
+
+  \item Pair, 77--80
+  \item pair, \textbf{77}
+  \item parse tree, \textbf{27}
+  \item parser, \textbf{211}
+  \item parsing, 221
+  \item Pascal's Triangle, 91
+  \item Pascaline, 106
+  \item pegboard puzzle, 151, 167
+  \item pixel, \textbf{11}
+  \item place, \textbf{182}
+  \item postulate, 237
+  \item power set, \textbf{148}
+  \item precedence, \textbf{215}
+  \item primitive, 20
+  \item primitive expressions, 40
+  \item primitive procedures, 40, 41
+  \item primitives, 223
+  \item Principia Mathematica, \textbf{240}
+  \item printf, 68
+  \item printing, 68
+  \item problem, \textbf{53}
+  \item procedure, \textbf{2}, 45, 76
+  \item programmability, 107
+  \item programming language, \textbf{37}
+  \item proof, \textbf{238}
+  \item proof by construction, \textbf{30}
+  \item proposition, \textbf{238}
+  \item Python, 192
+
+  \indexspace
+
+  \item quadratically, \textbf{145}
+
+  \indexspace
+
+  \item random, 157
+  \item recursive definition, 17, 23, 56--67, 102
+  \item recursive descent, 222, \textbf{222}
+  \item recursive grammar, 27
+  \item recursive transition network, \textbf{22}
+  \item reducible, \textbf{246}
+  \item reduction, \textbf{246}
+  \item relaxation, \textbf{178}
+  \item repeat-until, \textbf{193}
+  \item reverse, 89
+  \item rules of evaluation, 50
+  \item Russell's paradox, \textbf{239}
+
+  \indexspace
+
+  \item scalar, \textbf{75}
+  \item Scheme, 39
+  \item searching, 167
+  \item set, 179
+  \item set-mcar, 186
+  \item set-mcdr, 186
+  \item shag, 22
+  \item side effects, \textbf{69}, 179
+  \item Simula, 208
+  \item Sketchpad, 208
+  \item Smalltalk, 209
+  \item sorted binary tree, \textbf{161}
+  \item sorting, 153--167
+  \item special form, \textbf{48}
+  \item square, 46
+  \item square root, 62
+  \item stack, \textbf{24}
+  \item state, 45
+  \item String, 170
+  \item string, \textbf{19}, 217
+  \item subclass, \textbf{201}
+  \item substitution, 181
+  \item superclass, \textbf{201}
+  \item surface forms, 19
+  \item Survivor, 71
+  \item syllogisms, \textbf{237}
+  \item Symbol, 94
+  \item symbol, 198
+
+  \indexspace
+
+  \item tagged list, \textbf{94}
+  \item tail recursive, \textbf{62}
+  \item thunk, 230, \textbf{230}
+  \item token, \textbf{213}
+  \item tokenizer, \textbf{213}
+  \item tracing, 69
+  \item transitive, \textbf{153}
+  \item tree, 161
+  \item truth table, \textbf{109}
+  \item truthiness, 21
+  \item Turing Machine, 118, 138
+  \item types, 75
+
+  \indexspace
+
+  \item universal computing machine, \textbf{120}
+  \item universal programming language, \textbf{102}, \textbf{245}
+  \item Universal Turing Machine, \textbf{244}
+  \item universality, 102
+  \item URL, 173
+
+  \indexspace
+
+  \item virus, 246
+
+  \indexspace
+
+  \item web, 173
+  \item web crawler, \textbf{177}
+  \item web-get, 173
+  \item well-balanced, \textbf{163}
+  \item while loop, \textbf{192}
+  \item Whirlwind, 207
+  \item worst case, \textbf{138}
+
+  \indexspace
+
+  \item xkcd, 235
+
+\end{theindex}

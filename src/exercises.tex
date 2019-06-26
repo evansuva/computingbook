@@ -1,0 +1,64 @@
+\documentclass[11pt]{book} 
+\usepackage[papersize={8.5in,11in},outer=1.0in,inner=1.0in,vmargin={1.0in,1.0in}, nofoot, bindingoffset=0.0in,headsep=0.0in]{geometry}
+\input{exercises-preamble.tex}
+
+% I can't get extract to produce labels correctly without breaking things...just manually update this!
+\newlabel{fig:three-bits}{{1.1}{}{}{}{}}
+\newlabel{fig:subnetwork-rtn}{{2.3}{24}{Recursive transition network with subnetworks}{figure.2.3}{}}
+\newlabel{example:wholenumbers}{{2.1}{28}{Replacement Grammars}{examplenum.2.1}{}}
+\newlabel{fig:andsubnetwork-rtn}{{2.4}{24}{Alternate \nonterminal {Noun} subnetwork}{figure.2.4}{}}
+\newlabel{example:bigger}{{3.3}{49}{Decisions\relax }{examplenum.3.3}{}}
+\newlabel{ex:factorial}{{4.1}{58}{Recursive Problem Solving\relax }{examplenum.4.1}{}}
+\newlabel{sec:fcompose}{{4.2.1}{55}{Procedures as Inputs and Outputs\relax }{subsection.4.2.1}{}}
+
+\newlabel{sec:examining-lists}{{5.4.1}{85}{Procedures that Examine Lists\relax }{subsection.5.4.1}{}}
+\newlabel{example:intsto}{{5.8}{92}{Procedures that Construct Lists\relax }{examplenum.5.8}{}}
+\newlabel{example:list-sum}{{5.2}{86}{Procedures that Examine Lists\relax }{examplenum.5.2}{}}
+\newlabel{exploration:pegboard}{{5.2}{96}{Data Abstraction\relax }{explorationnum.5.2}{}}
+\newlabel{sec:listsoflists}{{5.5}{93}{Lists of Lists\relax }{section.5.5}{}}
+\newlabel{sec:generic}{{5.4.2}{87}{Generic Accumulators\relax }{subsection.5.4.2}{}}
+\newlabel{example:map}{{5.4}{89}{Procedures that Construct Lists\relax }{examplenum.5.4}{}}
+
+\newlabel{fig:three-and-compose}{{6.3}{114}{Computing \function {and3} by composing two \function {and} functions}{figure.6.3}{}}
+
+\newlabel{sec:measuringcost}{{7.1}{127}{Empirical Measurements\relax }{section.7.1}{}}
+\newlabel{picture:odometer}{{7.5}{145}{Linear Growth\relax }{examplenum.7.5}{}}
+
+\newlabel{sec:indexed-search}{{8.2.3}{171}{Indexed Search\relax }{subsection.8.2.3}{}}
+
+\newlabel{fig:circular-pair}{{9.5}{189}{Mutable pair created by evaluating (\var {set-mcdr!} \var {pair} \var {pair})}{figure.9.5}{}}
+
+\newlabel{fig:bb}{{12.3}{251}{Two-state Busy Beaver Machine}{figure.12.3}{}}
+
+\setlength\headheight{14pt}
+\begin{document}
+\input{style.sty}
+\input{python.sty}
+
+
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyhead[RE]{\nouppercase{\bfseries Exercises and Solutions}} 
+\fancyhead[LO]{\nouppercase{\bfseries \leftmark --- Exercises and Solutions}} 
+\fancyhead[LE,RO]{\thepage}
+
+%\fancyhead[RE]{\iffloatpage{}{\nouppercase{\bfseries \rightmark}}} 
+%\fancyhead[LO]{\iffloatpage{}{\nouppercase{\bfseries \leftmark}}} 
+%\fancyhead[LE,RO]{\iffloatpage{}{\thepage}}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headsep}{25pt}
+%\renewcommand{\headrulewidth}{\iffloatpage{0pt}{0.4pt}}
+% http://www.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/fancyhdr.pdf
+
+\fancypagestyle{plain}{
+  \fancyhf{} 
+ % \fancyfoot[C]{\fbox{\footnotesize David Evans, \emph{Computing: Explorations in Language, Logic, and Machines}, \today}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\input{exercises-generated.tex}
+
+\end{document}

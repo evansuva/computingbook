@@ -1,0 +1,149 @@
+\renewcommand{\lstlistlistingname}{Code Listings} 
+\renewcommand{\lstlistingname}{Code Listing} 
+\definecolor{gray}{gray}{0.5} 
+\definecolor{key}{rgb}{0,0.5,0} 
+  
+\lstnewenvironment{pythoncode}[1][]{
+\lstset{
+language=python,
+texcl=true,
+basicstyle=\setstretch{1}, % \ttfamily
+stringstyle=\sffamily\small,
+showstringspaces=false,
+identifierstyle=\itshape,
+  xleftmargin=20pt,
+  xrightmargin=20pt, 
+%alsoletter={1234567890},
+otherkeywords={\ , \}, \{},
+keywordstyle=\bfseries,
+upquote=true,
+emph={access,and,break,class,continue,def,del,elif,else,%
+except,exec,finally,for,from,global,if,import,in,is,%
+lambda,not,or,pass,print,raise,return,try,while,assert},
+emphstyle=\bfseries,
+emph={[2]True, False, None},
+emphstyle=[2]\sffamily\small,
+emphstyle=[4]\bfseries\itshape,
+%emph={[3]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+columns=fullflexible,
+morecomment=[s]{"""}{"""},
+keepspaces=true,
+commentstyle=\color{gray},
+literate=%*{:}{{\textcolor{black}:}}{1}%
+   %{"}{{"}}1 
+}}{}
+
+\lstnewenvironment{pythoncodewide}[1][]{
+\lstset{
+language=python,
+basicstyle=\setstretch{1}, % \ttfamily
+stringstyle=\sffamily\small,
+showstringspaces=false,
+identifierstyle=\itshape,
+  xleftmargin=0pt,
+  xrightmargin=0pt, 
+%alsoletter={1234567890},
+otherkeywords={\ , \}, \{},
+keywordstyle=\bfseries,
+upquote=true,
+emph={access,and,break,class,continue,def,del,elif,else,%
+except,exec,finally,for,from,global,if,import,in,is,%
+lambda,not,or,pass,print,raise,return,try,while,assert},
+emphstyle=\bfseries,
+emph={[2]True, False, None},
+emphstyle=[2]\sffamily\small,
+emphstyle=[4]\bfseries\itshape,
+%emph={[3]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+columns=fullflexible,
+morecomment=[s]{"""}{"""},
+keepspaces=true,
+commentstyle=\color{gray}\slshape,
+literate=%*{:}{{\textcolor{black}:}}{1}%
+   %{"}{{"}}1 
+}}{}
+
+\lstnewenvironment{pythoninteractions}[1][]{
+\lstset{
+language=python,
+basicstyle=\setstretch{1}, % \ttfamily
+stringstyle=\sffamily\small,
+showstringspaces=false,
+identifierstyle=\itshape,
+  xleftmargin=20pt,
+  xrightmargin=20pt, 
+%alsoletter={1234567890},
+otherkeywords={\ , \}, \{},
+keywordstyle=\color{black},
+emph={access,and,break,class,continue,def,del,elif,else,%
+except,exec,finally,for,from,global,if,import,in,is,%
+lambda,not,or,pass,print,raise,return,try,while,assert},
+emphstyle=\color{black}\bfseries,
+emph={[2]True, False, None},
+emphstyle=[2]\sffamily\small,
+columns=fullflexible,
+emph={[3]from, import, as},
+emphstyle=[3]\color{black},
+emphstyle=[4]\bfseries\itshape,
+upquote=true,
+%morestring=[b]{``},
+%morestring=[b]{''},
+morecomment=[s]{"""}{"""},
+keepspaces=true,
+commentstyle=\color{gray}\slshape,
+emph={[4]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+emphstyle=[4]\sffamily\small,
+escapechar=\^,
+literate=%*{:}{{\textcolor{black}:}}{1}%
+   {>>>}{{$\gg$}}2
+   %{"}{{"}}1 
+}}{}
+
+\lstdefinelanguage{smalltalk}{
+  morekeywords={true,false,self,super,nil,class,variable,instance,name,names},
+  sensitive=true,
+  morecomment=[s]{"}{"},
+  morestring=[d]',
+  style=smalltalkstyle
+}
+\lstdefinestyle{smalltalkstyle}{
+  literate={:=}{{$\gets$}}1{^}{{$\uparrow$}}1
+  keywordstyle=\bfseries,
+  columns=fullflexible,
+  identifierstyle=\itshape,
+  xleftmargin=20pt,
+  xrightmargin=20pt, 
+}
+
+\lstset{
+language=python,
+basicstyle=\setstretch{1}, % \ttfamily
+stringstyle=\sffamily\small,
+showstringspaces=false,
+identifierstyle=\itshape,
+  xleftmargin=20pt,
+  xrightmargin=20pt, 
+%alsoletter={1234567890},
+otherkeywords={\ , \}, \{},
+keywordstyle=\color{black},
+emph={access,and,break,class,continue,def,del,elif,else,%
+except,exec,finally,for,from,global,if,import,in,is,%
+lambda,not,or,pass,print,raise,return,try,while,assert},
+emphstyle=\color{black}\bfseries,
+emph={[2]True, False, None},
+emphstyle=[2]\sffamily\small,
+columns=fullflexible,
+keepspaces=true,
+emph={[3]from, import, as},
+emphstyle=[3]\color{black},
+emphstyle=[4]\bfseries\itshape,
+upquote=true,
+%morestring=[b]{``},
+%morestring=[b]{''},
+morecomment=[s]{"""}{"""},
+commentstyle=\color{gray}\slshape,
+emph={[4]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+emphstyle=[4]\sffamily\small,
+literate=%*{:}{{\textcolor{black}:}}{1}%
+   {>>>}{{$\gg$}}2
+   %{"}{{"}}1 
+}

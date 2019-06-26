@@ -1,0 +1,210 @@
+%
+% common-preamble.tex
+% Used for both main text and exercises.
+%
+
+%%% For book printing
+
+% Lulu
+%\usepackage[papersize={7.444in,9.681in},outer=1.75in,inner=0.5in,vmargin={1.5cm,1.5cm}, nofoot, bindingoffset=0.25in,headsep=0.15in]{geometry}
+
+% CreateSpace
+
+
+%papersize={18.91cm,24.589cm}
+
+%hscale=0.65,vscale=0.85,
+%\special{papersize=6in,9in}
+
+%%!! \usepackage[T1]{fontenc} % this breaks eepicemu graphs...doesn't seem to be needed
+%%\usepackage{textcomp}
+%%\usepackage{lucidabr}
+
+%\usepackage{lmodern}
+%\usepackage[T1]{fontenc}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{6pt}{-6pt}
+\titlespacing{\subsection}{0pt}{3pt}{-6pt}
+\titlespacing{\subsubsection}{0pt}{3pt}{-6pt}
+
+%% this changes the spacing
+%% \usepackage{sectsty}
+%% \chapterfont{\sffamily}
+%% \partfont{\sffamily}
+%% \sectionfont{\sffamily}
+
+\usepackage{mathpazo} % palatino math fonts
+\usepackage{utopia} % fourier
+\usepackage{helvet}
+\usepackage{slatex}
+\usepackage{endnotes}
+\usepackage{mdwlist}
+\usepackage{fncylab}
+\usepackage{verbatim} 
+\usepackage{enumerate}
+\usepackage{xyling}
+\usepackage[noauto]{chappg} %% [noauto] for continuous page numbers
+\usepackage{amssymb}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{mparhack} % make marginpar's work on even/odd sides correctly
+\usepackage{fancyhdr}
+\usepackage{color, epic, eepicemu}
+\usepackage{listings} % Gives syntax highlighting for python code. 
+\usepackage{textcomp} % Used for syntax highlighting. 
+\usepackage{setspace}
+% both packages define lofdepth
+\usepackage{tocloft}
+\usepackage{packages/subfigure} %\usepackage{subfigure} % my modified version
+\usepackage{helvet}
+\usepackage{hanging}
+\usepackage[avantgarde]{quotchap}
+\usepackage{makeidx}
+\usepackage{lineno}
+
+\renewcommand\chapterheadendvskip{\vspace*{\baselineskip}}
+\renewcommand\chapterheadstartvskip{\vspace*{-5\baselineskip}}
+
+\usepackage[bookmarks, pdftitle={Introduction to Computing: Explorations in Language, Logic, and Machines}, pdfauthor={David Evans}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black, hyperindex]{hyperref}
+
+\usepackage{url}
+\urlstyle{sf}
+
+%\def\url@smallstyle{%
+ % \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\sffamily}}}
+%\makeatother
+%% Now actually use the newly defined style.
+%\urlstyle{small}
+
+%%% For per-chapter page numbering
+%\makeatletter \@addtoreset{page}{chapter} \makeatother
+%\pagenumbering[\thesection]{bychapter}
+
+%!\pdfpagewidth 8.5in
+%!\pdfpageheight 11in
+
+%\pdfpagewidth 6.0in
+%\pdfpageheight 9.0in
+
+%\setlength\topmargin{0in}
+%\setlength\headheight{14pt}
+%\setlength\headsep{0.25in}
+%\setlength\topskip{0in}
+%!\setlength\textheight{8.2in}
+
+%%%
+%%% Exercises and Examples
+%%%
+
+\makeatletter
+\@addtoreset{exercisenum}{chapter}
+\@addtoreset{examplenum}{chapter}
+\@addtoreset{explorationnum}{chapter}
+\makeatother
+
+\newcommand{\listexamplename}{{\large\bfseries List of Examples}\vspace*{-2ex}}
+\newlistof{example}{exp}{\listexamplename}
+\cftsetindents{example}{1.5em}{3.0em}
+
+\newcommand{\listexplorationname}{{\large\bfseries List of Explorations}\vspace*{-2ex}}
+\newlistof{exploration}{explore}{\listexplorationname}
+\cftsetindents{exploration}{1.5em}{3.0em}
+
+\newcounter{exercisenum}[chapter]
+\newcounter{explorationnum}[chapter]
+\newcounter{examplenum}[chapter]
+
+\renewcommand\theexercisenum{\arabic{chapter}.\arabic{exercisenum}}
+\renewcommand\theexamplenum{\arabic{chapter}.\arabic{examplenum}}
+\renewcommand\theexplorationnum{\arabic{chapter}.\arabic{explorationnum}}
+
+%%! \newenvironment{example}[1]{\refstepcounter{examplenum}\addcontentsline{exp}{example}{\protect\numberline{\theexamplenum} #1}\textbf{Example \theexamplenum: #1.}\quad}{}
+
+\newenvironment{example}[1]{
+   \refstepcounter{examplenum}
+   \colorbox{examplecolor}{\makebox[1.0\textwidth][l]{\textcolor{white}{\textbf{Example \theexamplenum: #1\\}
+   \addcontentsline{example}{example}{\protect\numberline{\theexamplenum}#1}
+   \hspace\fill}}}\vspace*{0.5ex}}{\par \vspace*{-1.2ex}\colorbox{examplecolor}{\makebox[1.0\textwidth][l]{\ }}\vspace*{0.5ex}}
+
+\newenvironment{examplenobar}[1]{
+   \refstepcounter{examplenum}
+   \colorbox{examplecolor}{\makebox[1.0\textwidth][l]{\textcolor{white}{\textbf{Example \theexamplenum: #1\\}
+   \addcontentsline{example}{example}{\protect\numberline{\theexamplenum}#1}
+   \hspace\fill}}}\vspace*{0.5ex}}{}
+
+\newenvironment{exercise}{\refstepcounter{exercisenum}\textbf{Exercise \theexercisenum.\ }}{\vspace*{0.5ex}}
+\newenvironment{shortexercise}{\refstepcounter{exercisenum}\textbf{Exercise \theexercisenum.\ }}{\par}
+
+\definecolor{explorecolor}{rgb}{0.6,.25,0.15}
+\definecolor{exploreendcolor}{rgb}{0.3,.05,0.05}
+
+\definecolor{examplecolor}{rgb}{0.15,.45,0.15}
+
+\definecolor{biocolor}{rgb}{0.15,.25,0.6}
+
+\newenvironment{exploration}[1]{
+   \refstepcounter{explorationnum}
+   \colorbox{explorecolor}{\makebox[1.0\textwidth][l]{\textcolor{white}{\textbf{Exploration \theexplorationnum: #1 \\}
+   \addcontentsline{explore}{exploration}{\protect\numberline{\theexplorationnum} #1}
+   \hspace\fill}}}}{\vspace*{-1.2ex}\colorbox{explorecolor}{\makebox[1.0\textwidth][l]{\ }}}
+
+\newenvironment{biography}[1]{\colorbox{biocolor}{\makebox[1.0\textwidth][l]{\textcolor{white}{\textbf{Profile: #1 \\}\hspace\fill}}}}{\vspace*{-1.2ex}\colorbox{biocolor}{\makebox[1.0\textwidth][l]{\ }}}
+
+\newenvironment{explorationnobar}[1]{\refstepcounter{explorationnum}
+   \addcontentsline{explore}{exploration}{\protect\numberline{\theexplorationnum} #1}
+   \colorbox{explorecolor}{\makebox[1.0\textwidth][l]{\textcolor{white}{\textbf{Exploration \theexplorationnum: #1 \\}\hspace\fill}}}}{}
+
+\newcommand{\shortex}[1]{\begin{shortexercise}#1\end{shortexercise}}
+
+%\newcommand{\ex}[1]
+%   {\begin{minipage}[t]{1.0\textwidth}\setlength{\parindent}{0em}\setlength{\parskip}{1.5ex}
+%    \begin{exercise}#1\end{exercise}\end{minipage}}
+%\newcommand{\splitex}[1]{\begin{exercise}#1\end{exercise}}
+
+\newcommand{\beforeex}{\begin{minipage}[t]{1.0\textwidth}\setlength{\parindent}{0em}\setlength{\parskip}{1.5ex}}
+\newcommand{\afterex}{\end{minipage}}
+\newcommand{\beforesplitex}{}
+\newcommand{\aftersplitex}{}
+
+
+\newcommand{\excur}[2]
+   {\begin{minipage}[t]{1.0\textwidth}\setlength{\parindent}{0em}\setlength{\parskip}{1.5ex}
+    \begin{exploration}{#1}#2\end{exploration}\end{minipage}}
+\newcommand{\splitexcur}[2]{\begin{exploration}{#1}#2\end{exploration}}
+
+\newcommand{\explore}[2]
+   {\begin{minipage}[t]{1.0\textwidth}\setlength{\parindent}{0em}\setlength{\parskip}{1.5ex}
+    \begin{exploration}{#1}#2\\ \end{exploration}\end{minipage}}
+\newcommand{\splitexplore}[2]{\begin{exploration}{#1}\vspace*{0.5ex}\par #2 \par \end{exploration}}
+\newcommand{\splitexplorenobar}[2]{\begin{explorationnobar}{#1}\vspace*{0.5ex}\par #2 \par \end{explorationnobar}}
+
+\newcommand{\splitbio}[2]{\begin{biography}{#1}\vspace*{0.5ex}\par #2 \par \end{biography}}
+
+
+\newcounter{subexercisenum}[exercisenum]
+\newenvironment{subexerciselist}
+	{\vspace*{-2ex}\begin{enumerate}[\bfseries a.]\setlength{\parsep}{3pt}\setlength{\topsep}{3pt}\setlength{\partopsep}{0pt}\setlength{\itemsep}{0cm}} %!! \setlength{\parskip}{0cm}}
+	{\end{enumerate}\vspace*{-1.3ex}}
+
+\definecolor{gold}{rgb}{0.85,.66,0}
+\definecolor{lightgrey}{rgb}{0.4,0.4,0.9}
+%\newcommand{\bluestar}{\textcolor{blue}{$\left[\star\right]$}\hspace{0.5em}}
+%\newcommand{\greenstar}{\textcolor{green}{$\left[\star\right]$}\hspace{0.5em}}
+%\newcommand{\goldstar}{\textcolor{gold}{$\left[\star\right]$}\hspace{0.5em}}
+%\newcommand{\doublegoldstar}{\textcolor{gold}{$\left[\star\star\right]$}\hspace{0.5em}}
+%\newcommand{\triplegoldstar}{\textcolor{gold}{$\left[\star\star\star\right]$}\hspace{0.5em}}
+%\newcommand{\quadgoldstar}  {\textcolor{gold}{$\left[\star\star\star\star\right]$}\hspace{0.5em}}
+
+\newcommand{\bluestar}{} % \textcolor{blue}{$\left[\star\right]$}\hspace{0.5em}}
+\newcommand{\greenstar}{} %\textcolor{green}{$\left[\star\right]$}\hspace{0.5em}}
+\newcommand{\goldstar}{\textcolor{gold}{$\left[\star\right]$}\hspace{0.5em}}
+\newcommand{\doublegoldstar}{\textcolor{gold}{$\left[\star\star\right]$}\hspace{0.5em}}
+\newcommand{\triplegoldstar}{\textcolor{gold}{$\left[\star\star\star\right]$}\hspace{0.5em}}
+\newcommand{\quadgoldstar}  {\textcolor{gold}{$\left[\star\star\star\star\right]$}\hspace{0.5em}}
+
+\newcommand{\difficulty}[1]{(#1) }
+
+\newcommand{\hint}[1]{{\footnotesize {\bold{Hint:} #1}}}
