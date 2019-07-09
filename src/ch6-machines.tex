@@ -5,6 +5,14 @@
 
 %\chapquotew{Well let's be clear right from the start, I never have been interested in computing, and I'm still not interested in computing. What I'm interested in is computers. I'm an engineer, I define the computer right from square one as a device which was designed to facilitate the performance of mathematics, the greater part of which would be very much better not done.}{F. C. Williams, engineer of the first stored-program computer}{10.75cm}\index{people}{Williams, F. C.}
 
+\begin{exercisenote}
+\exercisesonly{
+\begin{center}
+{\em Solutions for Chapter 6 provided by Ervin Varga.}
+\end{center}
+}
+\end{exercisenote}
+
 \begin{schemeregion}
 
 %\begin{profile}
@@ -91,7 +99,12 @@ This computer (and all general-purpose computers in use today) stores the progra
 \beforeex
 \begin{exercise}
 Babbage's design for the Analytical Engine called for a store holding 1000 variables, each of which is a 50-digit (decimal) number.  How many bits could the store of Babbage's Analytical Engine hold? 
-\solution{\LATER{}}
+\solution{
+With 50 decimal digits we can differentiate $10^{50}$ numbers covering the
+range $[0, 10^{50} - 1]$.  Thus, we need $\ceil{\log_2 10^{50}} = 167$
+bits per variable. Thus, The machine could store 167,000 bits in
+total, which is 20,875 bytes (or approximately 20KB).
+}
 \end{exercise}
 \afterex
  
@@ -263,21 +276,29 @@ To complete the proof, we would need to show how to implement all the other Bool
 \beforeex
 \begin{exercise}
 Define a Scheme procedure, \scheme|logical-or|, that takes two inputs and outputs the logical or of those inputs.
-\solution{\LATER{}}
+\solution{
+\begin{schemedisplay}
+(define (logical-or a b) (if a true b))
+\end{schemedisplay}
+}
 \end{exercise}
 \afterex
 
 \beforeex
-\begin{exercise}
+\begin{exercise}\label{ex:notnot}
 What is the meaning of composing \function{not} with itself?  For example, (\function{not} (\function{not} \var{A})).
-\solution{\LATER{}}
+\solution{
+It is an identity function: for any \var{A}, (\function{not}(\function{not} \var{A})) = \var{A}.
+}
 \end{exercise}
 \afterex
 
 \beforeex
 \begin{exercise}
 \bluestar Define the \function{xor} function using only \function{nand} functions.
-\solution{\LATER{}}
+\solution{
+(\function{xor} \var{A} \var{B}) $\equiv$ (\function{and} (\function{or} \var{A} \var{B}) (\function{nand} \var{A} \var{B})).  The book already describes how to express \function{and}, \function{not}, and \function{or} in terms of\function{nand}, so we can plug in those definition to obtain a full definition of \function{xor} using only \function{nand}.
+}
 \end{exercise}
 \afterex
 
@@ -295,14 +316,24 @@ Prove that \function{xor} is commutative, and use this result to show that the i
 \beforeex
 \begin{exercise} \goldstar \label{ex:copy}
 Our definition of \scheme|(not A)| as \scheme|(nand A A)| assumes there is a way to produce two copies of a given input.  Design a component for our wine machine that can do this.  It should take one input, and produce two outputs, both with the same value as the input.  (Hint: when the input is \true, we need to produce two full bottles as outputs, so there must be a source similarly to the \function{not} component.)
-\solution{\LATER{}}
+\solution{
+It is very similar to the \function{not} machine. The difference is that the two nozzles are at the bottom
+of the basin (below the float) and fill two bottles of wine. The source's outlet is also at the
+bottom blocked by the float when the input is empty. If the input is a full bottle, then the
+float would unblock the source and fill the two bottles.
+}
 \end{exercise}
 \afterex
 
 \beforesplitex
 \begin{exercise} \goldstar \label{ex:amplifier}
 The digital abstraction works fine as long as actual values stay close to the value they represent.  But, if we continue to compute with the outputs of functions, the actual values will get increasingly fuzzy.  For example, if the inputs to the \function{and3} function in Figure~\ref{fig:three-and-compose} are initially all $\frac{3}{4}$ full bottles (which should be interpreted as \true), the basin for the first \function{and} function will fill to $1\frac{1}{2}$, so only $\frac{1}{2}$ bottle will be output from the first \function{and}.  When combined with the third input, the second basin will contain $1\frac{1}{4}$ bottles, so only $\frac{1}{4}$ will spill into the output bottle.  Thus, the output will represent \false, even though all three inputs represent \true.  The solution to this problem is to use an \emph{amplifier} to restore values to their full representations.  Design a wine machine amplifier that takes one input and produces a strong representation of that input as its output.  If that input represents \true\ (any value that is half full or more), the amplifier should output \true, but with a strong, full bottle representation.  If that input represents \false\ (any value that is less than half full), the amplifier should output a strong \false\ value (completely empty).  
-\solution{\LATER{}}
+\solution{
+This is a use case for the identify function from
+Exercise~\ref{ex:notnot}: two \function{not} machines should be combined to
+produce the desired amplifier.
+
+}
 \end{exercise}
 \aftersplitex
 
@@ -432,11 +463,50 @@ We can also implement multiplication, subtraction, and division using only \func
 Adding logically.
 \begin{subexerciselist}
 \item What is the logical formula for $r_3$?
-\solution{\LATER{}}
+\solution{
+\begin{schemedisplay}
+r2 = (xor (xor a2 b2) c2) 
+   = (xor (xor a2 b2)
+          (or (and a1 b1) (and a1 (and a0 b0)) (and b1 (and a0 b0))))
+
+c3 = (or (and a2 b2) (and a2 c2) (and b2 c2))
+   = (or (and a2 b2)
+         (and a2 (or (and a1 b1) (and a1 (and a0 b0)) (and b1 (and a0 b0))))
+         (and b2 (or (and a1 b1) (and a1 (and a0 b0)) (and b1 (and a0 b0)))))
+
+r3 = (xor (xor a3 b3) c3)
+   = (xor (xor a3 b3)
+          (or (and a2 b2)
+              (and a2 (or (and a1 b1) (and a1 (and a0 b0)) (and b1 (and a0 b0))))
+              (and b2 (or (and a1 b1) (and a1 (and a0 b0)) (and b1 (and a0 b0))))))
+
+c4= (or (and a3 b3) (and a3 c3) (and b3 c3))
+
+r4 = (xor (xor a4 b4) c4)
+\end{schemedisplay}
+}
 \item Without simplification, how many functions will be composed to compute the addition result bit $r_4$?  
-\solution{\LATER{}}
+\solution{
+The number of functions (without simplification) for $c_k$ is $4+2c_{k-1}$ for $k>1$, and $c_1 = 1$. Thus, $c_2 = 6$, $c_3 = 16$, and $c_4=36$. 
+
+The number of functions (without simplification) for $r_k$ is $2+c_k$ for $k > 0$. Thus, $r_1 = 3$, $r_2 = 8$, $r_3=18$, and $r_4 = 38$.
+
+}
 \item \goldstar Is it possible to compute $r_4$ with fewer logical functions?
-\solution{\LATER{}}
+\solution{
+Yes --- we can considerably simplify the expression of $r_4$ by observing that we can get:
+\begin{schemedisplay}
+c2 = (or (and a1 b1) (and c1 (or a1 b1))) 
+   = (or (and a1 b1) (and (and a0 b0) (or a1 b1)))
+\end{schemedisplay}
+Or more generally:
+\begin{schemedisplay}
+ck = (or (and ak bk) (and c[k-1] (or ak bk)))
+\end{schemedisplay}
+
+We may simplify both $c_3$ and $c_4$ via the previous template. We'll
+leave proving the minimal number of operations as a \doublegoldstar exercise.
+}
 \end{subexerciselist}
 \end{exercise}
 \afterex
@@ -444,14 +514,42 @@ Adding logically.
 \beforeex
 \begin{exercise} \bluestar 
 Show how to compute the result bits for binary multiplication of two 2-bit inputs using only logical functions.
-\solution{\LATER{}}
+\solution{
+The multiplication of two 2-bits numbers is comprised from one-bit multiplications and
+additions. Suppose we multiply $a_1a_0$ with $b_1b_0$. We get the following result bits (the carry
+bits are presented for better clarity):
+\begin{schemedisplay}
+r0 = (and a0 b0)
+c0 = 0
+
+r1 = (xor (and a0 b1) (and a1 b0))
+c1 = (and (and a0 b1) (and a1 b0))
+
+r2 = (xor (and a1 b1) c1) = (xor (and a1 b1) (and (and a0 b1) (and a1 b0)))
+c2 = (and (and a1 b1) c1) = (and (and a1 b1) (and (and a0 b1) (and a1 b0)))
+
+r3 = c2 = (and (and a1 b1) c1) = (and (and a1 b1) (and (and a0 b1) (and a1 b0)))
+\end{schemedisplay}
+}
 \end{exercise}
 \afterex
 
 \beforeex
 \begin{exercise} \goldstar 
 Show how to compute the result bits for binary multiplication of two inputs of any length using only logical functions.
-\solution{\LATER{}}
+\solution{
+
+The number of logical functions needed is quite large even for a tiny
+example of multiplying 2-bit by 2-bit numbers. In a general case, we
+cannot use such na\"{i}ve approach.  A classical two $n$-bit
+multiplier applies a shifter and accumulator to sum up partial
+products (this is known as shift-and-add multiplication). Modern
+architectures are much faster and employ quite advanced algorithms and
+hardware. You may want to look up Wallace Trees and Dadda Multipliers
+to get some ideas how to do this.
+
+}
+
 \end{exercise}
 \afterex
 
@@ -560,20 +658,20 @@ We need three internal states: \emph{LookForClosing}, in which the machine conti
 {\small
 \begin{tabular}{cccccp{3.5cm}}
 {\bf State} & {\bf Read} & {\bf Next State} & {\bf Write} & {\bf Move} & \  \\
-\emph{LookForClosing} & \tmtext{)} & \emph{LookForOpen} & \tmtext{X} & $\leftarrow$ & \emph{Found closing.}\\
-\emph{LookForClosing} & \tmtext{(} & \emph{LookForClosing} & \tmtext{(} & $\rightarrow$ & \emph{Keep looking.} \\
-\emph{LookForClosing} & \tmtext{X} & \emph{LookForClosing} & \tmtext{X} & $\rightarrow$ & \emph{Keep looking.}  \\
-\emph{LookForClosing} & \hash & \emph{CheckTape} & \hash & $\leftarrow$ & \emph{End of tape.} \\[1.5ex]
+\emph{LookForClosing} & \tmtext{)} & \emph{LookForOpen} & \tmtext{X} & $\leftarrow$ & (1) \emph{Found closing.}\\
+\emph{LookForClosing} & \tmtext{(} & \emph{LookForClosing} & \tmtext{(} & $\rightarrow$ & (2) \emph{Keep looking.} \\
+\emph{LookForClosing} & \tmtext{X} & \emph{LookForClosing} & \tmtext{X} & $\rightarrow$ & (3) \emph{Keep looking.}  \\
+\emph{LookForClosing} & \hash & \emph{CheckTape} & \hash & $\leftarrow$ & (4) \emph{End of tape.} \\[1.5ex]
 
-\emph{LookForOpen} & \tmtext{)} & - & \tmtext{X} & Error & \emph{\raggedright Shouldn't happen.}\\
-\emph{LookForOpen} & \tmtext{(} & \emph{LookForClosing} & \tmtext{X} & $\rightarrow$ & \emph{\raggedright Found open.}\\
-\emph{LookForOpen} & \tmtext{X} & \emph{LookForOpen} & \tmtext{X} & $\leftarrow$ & \emph{\raggedright Keep looking.}\\
-\emph{LookForOpen} & \hash & - & \tmtext{0} & Halt & \emph{\raggedright Reached beginning.}\\[1.5ex]
+\emph{LookForOpen} & \tmtext{)} & - & \tmtext{X} & Error & (5) \emph{\raggedright Shouldn't happen.}\\
+\emph{LookForOpen} & \tmtext{(} & \emph{LookForClosing} & \tmtext{X} & $\rightarrow$ & (6) \emph{\raggedright Found open.}\\
+\emph{LookForOpen} & \tmtext{X} & \emph{LookForOpen} & \tmtext{X} & $\leftarrow$ & (7) \emph{\raggedright Keep looking.}\\
+\emph{LookForOpen} & \hash & - & \tmtext{0} & Halt & (8) \emph{\raggedright Reached beginning.}\\[1.5ex]
 
-\emph{CheckTape} & \tmtext{)} & - & \tmtext{0} & Error & \emph{\raggedright Shouldn't happen.} \\
-\emph{CheckTape} & \tmtext{(} & - & \tmtext{0} & Halt & {\raggedright {\em Unbalanced open.}}\\
-\emph{CheckTape} & \tmtext{X} & \emph{CheckTape} & \tmtext{X} & $\leftarrow$ & \emph{\raggedright Keep checking.}\\
-\emph{CheckTape} & \hash & - & \tmtext{1} & Halt & {\raggedright {\em Finished checking.}}\\[1.5ex]
+\emph{CheckTape} & \tmtext{)} & - & \tmtext{0} & Error & (9) \emph{\raggedright Shouldn't happen.} \\
+\emph{CheckTape} & \tmtext{(} & - & \tmtext{0} & Halt & (10) {\raggedright {\em Unbalanced open.}}\\
+\emph{CheckTape} & \tmtext{X} & \emph{CheckTape} & \tmtext{X} & $\leftarrow$ & (11) \emph{\raggedright Keep checking.}\\
+\emph{CheckTape} & \hash & - & \tmtext{1} & Halt & (12) {\raggedright {\em Finished checking.}}\\[1.5ex]
 \end{tabular}}
 \caption{Rules for checking balanced parentheses Turing Machine.\label{fig:tmrules}}
 \end{figure}
@@ -594,11 +692,37 @@ Figure~\ref{fig:tm-parens} shows the same Turing Machine as a state graph.  When
 Follow the rules to simulate the checking parentheses Turing Machine on each input (assume the beginning and end of the input are marked with a \hash):
 \begin{subexerciselist}
 \item \tmtext{)}
+\solution{
+
+The descriptions below reference the rules from Figure~6.5. Assume the rules are numbered
+from top to bottom starting with 1. In all use cases below, the machine starts in
+\emph{LookForClosing} state, the head is above the start symbol \tmtext{\#}, and it moves to the right one
+square.
+
+To process \tmtext{)} we use rules 1 (\emph{Found closing}) and 8 (\emph{Reached beginning}, Halt).
+}
+
+
 %\item \tmtext{(}
 \item \tmtext{()}
+\solution{
+2, 1, 6, 3, 4, 11, 11, 12
+}
+
 \item \emph{empty input}
+\solution{
+4, 12
+}
+
 \item \tmtext{(()(()))()}
+\solution{
+2, 2, 1, 6, 3, 2, 2, 1, 6, 3, 1, 7, 7, 6, 3, 3, 3, 1, 7, 7, 7, 7, 7, 7, 6, 3, 3, 3, 3, 3, 3, 3, 2, 1,
+6, 3, 4, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12
+}
 \item \tmtext{(()))(()}
+\solution{
+2, 2, 1, 6, 3, 1, 7, 7, 6, 3, 3, 3, 1, 7, 7, 7, 7, 8
+}
 \end{subexerciselist}
 \end{exercise}
 \afterex
@@ -607,7 +731,9 @@ Follow the rules to simulate the checking parentheses Turing Machine on each inp
 \beforeex
 \begin{exercise} \goldstar 
 Design a Turing Machine for adding two arbitrary-length binary numbers.  The input is of the form $a_{n-1} \ldots a_1 a_0$ \tmtext{+} $b_{m-1} \ldots b_1 b_0$ (with \hash\ markers at both ends) where each $a_k$ and $b_k$ is either \tmtext{0} or \tmtext{1}.  The output tape should contain bits that represent the sum of the two inputs.
-\solution{\LATER{}}
+\solution{
+
+}
 \end{exercise}
 \afterex
 

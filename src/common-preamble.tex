@@ -23,6 +23,8 @@
 %\usepackage{lmodern}
 %\usepackage[T1]{fontenc}
 
+\usepackage{mathtools}
+
 \usepackage[compact]{titlesec}
 \titlespacing{\section}{0pt}{6pt}{-6pt}
 \titlespacing{\subsection}{0pt}{3pt}{-6pt}
@@ -123,6 +125,8 @@
 
 %%! \newenvironment{example}[1]{\refstepcounter{examplenum}\addcontentsline{exp}{example}{\protect\numberline{\theexamplenum} #1}\textbf{Example \theexamplenum: #1.}\quad}{}
 
+\newenvironment{exercisenote}{}{}
+
 \newenvironment{example}[1]{
    \refstepcounter{examplenum}
    \colorbox{examplecolor}{\makebox[1.0\textwidth][l]{\textcolor{white}{\textbf{Example \theexamplenum: #1\\}
@@ -208,3 +212,5 @@
 \newcommand{\difficulty}[1]{(#1) }
 
 \newcommand{\hint}[1]{{\footnotesize {\bold{Hint:} #1}}}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
