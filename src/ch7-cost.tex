@@ -3,6 +3,15 @@
 \chapquotew{
 I told my dad that someday I'd have a computer that I could write programs on. He said that would cost as much as a house. I said, ``Well, then I'm going to live in an apartment.''}{Steve Wozniak}{12.5cm}\index{people}{Wozniak, Steve} %http://www.independent.com/news/2008/mar/27/apple-cofounder-steve-wozniak-shares-his-thoughts-/
 
+\begin{exercisenote}
+\exercisesonly{
+\begin{center}
+{\em Solutions for Chapter 7 provided by Ervin Varga.}
+\end{center}
+}
+\end{exercisenote}
+
+
 \begin{schemeregion}
 
 This chapter develops tools for reasoning about the cost of evaluating a given expression.  Predicting the cost of executing a procedure has practical value (for example, we can estimate how much computing power is needed to solve a particular problem or decide between two possible implementations), but also provides deep insights into the nature of procedures and problems.
@@ -49,7 +58,21 @@ Finally, measuring the time of a particular application of a procedure does not 
 \beforesplitex
 \begin{exercise}
 Suppose you are defining a procedure that needs to append two lists, one short list, \scheme|short| and one very long list, \scheme|long|, but the order of elements in the resulting list does not matter.  Is it better to use \scheme|(list-append short long)| or \scheme|(list-append long short)|? (A good answer will involve both experimental results and an analytical explanation.)
-\solution{\LATER{}}
+\solution{
+It is faster to evaluate \scheme|(list-append short long)|, since the procedure iterates over the
+first argument and appends the second one once the first has been exhausted. 
+
+Here are some timings to support this statement:
+
+\begin{code}
+\scheme|> (define long-list (intsto 30000))|\\
+\scheme|> (define short-list (intsto 100))|\\
+\scheme|> (time (car (list-append long-list short-list)))|\\
+\soutput{cpu time: 30 real time: 30 gc time: 21}\\
+\scheme|> (time (car (list-append short-list long-list)))|\\
+\soutput{cpu time: 1 real time: 0 gc time: 0}\\
+\end{code}
+}
 \end{exercise}
 \aftersplitex
 
@@ -256,24 +279,73 @@ Proving that a function is not in $O(f)$ is usually tougher.  The key to these p
 
 \begin{exercise}\label{ex:bigo}
 For each of the $g$ functions below, answer whether or not $g$ is in the set $O(n)$.  Your answer should include a proof.  If $g$ is in $O(n)$ you should identify values of $c$ and $n_0$ that can be selected to make the necessary inequality hold.  If $g$ is not in $O(n)$ you should argue convincingly that no matter what values are chosen for $c$ and $n_0$ there are values of $n \ge n_0$ such the inequality in the definition of $O$ does not hold.
+
+\solution{
+In all of these cases we need to analyze whether $g(n) \leq c \cdot f(n)$ for all $n \geq n_0$, for arbitrary
+constants $c$ and $n_0$.
+
+}
+
 \begin{subexerciselist}
 \item $g(n) = n + 5$
+\solution{
+$g(n)$ is in $O(n)$: choose $c = 5$ and $n_0 = 2$. Then, $n + 5 \leq 5n$ for all $n \geq 2$. 
+}
+
 \item $g(n) = .01n$
+\solution{
+$g(n)$ is in $O(n)$: Choose $c = 1$ and $n_0 = 1$. Then, $0.01n \leq n$ for all $n \geq 1$.
+}
+
 \item $g(n) = 150n + \sqrt{n}$
+\solution{
+$g(n)$ is in $O(n)$: choose $c = 151$ and $n_0 = 1$. Then, $150n + \sqrt{n} \leq 151n$ for all $n \geq 1$.
+}
 \item $g(n) = n^{1.5}$
+\solution{
+$g(n)$ is \bold{not} in $O(n)$. For any value of $c$, we can make $n^{1.5} = n \cdot \sqrt{n} > cn$ by choosing $n > c^2$.
+}
 \item $g(n) = n!$
+\solution{
+$g(n)$ is \bold{not} in $O(n)$. For any value of $c$, we can make $n! = n \cdot (n - 1) \ldots 2 \cdot 1 => cn$ by choosing $n > c + 1$. Notice that in this case $n - 1 > c$ (second term above).
+}
+
 \end{subexerciselist}
 \end{exercise}
 
 \begin{exercise}\goldstar
 Given $f$ is some function in $O(h)$, and $g$ is some function not in $O(h)$, which of the following must always be true:
+\solution{
+In all of these cases we know that the following is true for some $c_1$, $c_2$, $n_0$, and $m_0$:
+$f(n) \le c_1 h(n)$  when $n \ge n_{0f}$, and $h(n) \le c_2 g(n)$ when $n \ge n_{0g}$. 
+Saying that $g$ is not in $O(h)$ implies that $h$ is in $O(g)$. Again, it doesn't matter whether $O(g)$ is a
+reasonable upper bound, i.e., we can say that $n+1$ is in $O(n!)$, although such an upper bound
+is not useful.
+}
 \begin{subexerciselist}
 \item For all positive integers $m$, $f(m) \le g(m)$.
+\solution{
+{\bf Not always true.} To prove this, it is enough to find a single counterexample. Suppose
+$f=m+10$, $h=m$, and $g=0.1m^2$. Obviously, $m+10$ is in $O(m)$ and $0.1m^2$ is not in $O(m)$.
+Nevertheless, $m + 10 > 0.1m^2$ for $m=1$, hence the original statement doesn't apply for
+all positive integers $m$.
+}
+
 \item For some positive integer $m$, $f(m) < g(m)$.
+\solution{
+{\bf Always true.} Recall that $g$ is not in $O(h)$, so at some value $m$, $g(m)$ will
+become strictly larger than $ch(m)$ irrespective of the chosen constant $c$. On the other
+hand, we know that $f(m)$ is bounded by $h(m)$ for some constant $c$ and for all $n > n_0$ for some constant $n_0$. Consequently, $f(m)$ must be smaller than $g(m)$ for some input $m$.
+}
 \item For some positive integer $m_0$, and all positive integers $m > m_0$, 
 \begin{displaymath}
 f(m) < g (m).
 \end{displaymath}
+\solution{{\bf Always true.} Intuitively, since $g(m) \notin O(h)$ it grows faster than $h$, while since $f(m) \in O(h)$ it grows no faster than $h$, so eventually $g(m)$ must exceed $f(m)$. More formally, it is enough to choose $m_0 = max(m_{0f}, m_{0g})$ from the two following expressions:
+$f(m) \le c_1 h(m)$, for some $c_1$ when $m \ge m_{0f}$ since $f \in O(h)$; and
+$g(m) \le c_1 h(m)$, when $m \ge m_{0g}$ since $g \notin O(h)$. Note that tje second inequality must hold for 
+some $m_{0g}$ since $g \notin O(h)$. Eventually, $g(m)$ must become larger than $c_1h(m)$ for any constant $c_1$.
+}
 \end{subexerciselist}
 \end{exercise}
 

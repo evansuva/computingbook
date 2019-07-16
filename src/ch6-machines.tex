@@ -706,22 +706,22 @@ To process \tmtext{)} we use rules 1 (\emph{Found closing}) and 8 (\emph{Reached
 %\item \tmtext{(}
 \item \tmtext{()}
 \solution{
-2, 1, 6, 3, 4, 11, 11, 12
+2, 1, 6, 3, 4, 11, 11, 12.
 }
 
 \item \emph{empty input}
 \solution{
-4, 12
+4, 12.
 }
 
 \item \tmtext{(()(()))()}
 \solution{
 2, 2, 1, 6, 3, 2, 2, 1, 6, 3, 1, 7, 7, 6, 3, 3, 3, 1, 7, 7, 7, 7, 7, 7, 6, 3, 3, 3, 3, 3, 3, 3, 2, 1,
-6, 3, 4, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12
+6, 3, 4, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12.
 }
 \item \tmtext{(()))(()}
 \solution{
-2, 2, 1, 6, 3, 1, 7, 7, 6, 3, 3, 3, 1, 7, 7, 7, 7, 8
+2, 2, 1, 6, 3, 1, 7, 7, 6, 3, 3, 3, 1, 7, 7, 7, 7, 8.
 }
 \end{subexerciselist}
 \end{exercise}
@@ -732,6 +732,8 @@ To process \tmtext{)} we use rules 1 (\emph{Found closing}) and 8 (\emph{Reached
 \begin{exercise} \goldstar 
 Design a Turing Machine for adding two arbitrary-length binary numbers.  The input is of the form $a_{n-1} \ldots a_1 a_0$ \tmtext{+} $b_{m-1} \ldots b_1 b_0$ (with \hash\ markers at both ends) where each $a_k$ and $b_k$ is either \tmtext{0} or \tmtext{1}.  The output tape should contain bits that represent the sum of the two inputs.
 \solution{
+
+There are many strategies that can work for this, but its best to break the problem into a few subtasks like finding the least significant remaining digit, adding two bits (with a stored carry in the state), moving to the next position for writing the output, etc. For a problem this complicated, there are many on-line Turing Machine simulators to use to develop and test your solution.
 
 }
 \end{exercise}
