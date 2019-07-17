@@ -3,6 +3,9 @@
 \chapquotew{
 I told my dad that someday I'd have a computer that I could write programs on. He said that would cost as much as a house. I said, ``Well, then I'm going to live in an apartment.''}{Steve Wozniak}{12.5cm}\index{people}{Wozniak, Steve} %http://www.independent.com/news/2008/mar/27/apple-cofounder-steve-wozniak-shares-his-thoughts-/
 
+
+\begin{schemeregion}
+
 \begin{exercisenote}
 \exercisesonly{
 \begin{center}
@@ -10,9 +13,6 @@ I told my dad that someday I'd have a computer that I could write programs on. H
 \end{center}
 }
 \end{exercisenote}
-
-
-\begin{schemeregion}
 
 This chapter develops tools for reasoning about the cost of evaluating a given expression.  Predicting the cost of executing a procedure has practical value (for example, we can estimate how much computing power is needed to solve a particular problem or decide between two possible implementations), but also provides deep insights into the nature of procedures and problems.
 
@@ -383,7 +383,36 @@ We repeat selected examples from the previous section with $\Omega$ instead of $
 \beforeex
 \begin{exercise}
 Repeat Exercise~\ref{ex:bigo} using $\Omega$ instead of $O$.
-\solution{\LATER{}}
+
+\exercisesonly{
+In all of these cases we need to analyze whether $g(n) \ge cf(n)$ for all $n \ge n_0$ for any constants $c$ and $n_0$.
+
+\begin{subexerciselist}
+\item $g(n) = n + 5$
+\solution{
+$g(n)$ is in $\Omega(n)$: choose $c = 1$ and $n_0 = 1$. Then, $n + 5 \geq n$ for all $n \geq 1$. 
+}
+
+\item $g(n) = .01n$
+\solution{
+$g(n)$ is in $\Omega(n)$: Choose $c = 0.01$ and $n_0 = 1$. Then, $0.01n \leq 0.01n$ for all $n \geq 1$.
+}
+
+\item $g(n) = 150n + \sqrt{n}$
+\solution{
+$g(n)$ is in $\Omega(n)$: choose $c = 1$ and $n_0 = 1$. Then, $150n + \sqrt{n} \geq n$ for all $n \geq 1$.
+}
+\item $g(n) = n^{1.5}$
+\solution{
+$g(n)$ is in $\Omega(n)$: choose $c = 1$ and $n_0 = 1$, then $n^{1/5} = n\sqrt{n} \ge n$ for all $n \ge 1$.
+}
+\item $g(n) = n!$
+\solution{
+$g(n)$ is in $\Omega(n)$: choose $c = 1$ and $n_0 = 1$, then $n! \ge n$ for all $n \ge 1$.
+}
+
+\end{subexerciselist}
+}
 \end{exercise}
 \afterex
 
@@ -392,11 +421,17 @@ Repeat Exercise~\ref{ex:bigo} using $\Omega$ instead of $O$.
 For each part, identify a function $g$ that satisfies the property.
 \begin{subexerciselist}
 \item $g$ is in $O(n^2)$ but not in $\Omega(n^2)$.
-\solution{\LATER{}}
+\solution{
+$g(n) = n$ is in $O(n^2)$ but not in $\Omega(n^2)$.
+}
 \item $g$ is not in $O(n^2)$ but is in $\Omega(n^2)$.
-\solution{\LATER{}}
+\solution{
+$g(n)= n^3$ is not in $O(n^2)$ but is in $\Omega(n^2)$.
+}
 \item $g$ is in both $O(n^2)$ and $\Omega(n^2)$.
-\solution{\LATER{}}
+\solution{
+$g(n) = n^2$
+}
 \end{subexerciselist}
 \end{exercise}
 \afterex
@@ -444,12 +479,23 @@ is satisfied.  As for the constants, as $n$ increases they become insignificant.
 \end{descriptionlist}
 This property also holds for the $O$ and $\Omega$ operators since our proof for $\Theta$ also proved the property for the $O$ and $\Omega$ inequalities.
 
-This result can be generalized to any polynomial.  The set $\Theta(a_0 + a_1 n + a_2 n^2 + ... + a_kn^k)$ is equivalent to $\Theta(n^k)$.  Because we are concerned with the asymptotic growth, only the highest power term of the polynomial matters once $n$ gets big enough.  
+This result can be generalized to any polynomial --- $\Theta(a_0 + a_1 n + a_2 n^2 + ... + a_kn^k)$ is equivalent to $\Theta(n^k)$.  Because we are concerned with the asymptotic growth, only the highest degree term matters once $n$ gets big enough.  
 
-\shortex{Repeat Exercise~\ref{ex:bigo} using $\Theta$ instead of $O$.}
-\shortex{\label{exercise:thetan} Show that $\Theta(n^2-n)$ is equivalent to $\Theta(n^2)$.}
-\shortex{\goldstar Is $\Theta(n^2)$ equivalent to $\Theta(n^{2.1})$?  Either prove they are identical, or prove they are different.}
-\shortex{\goldstar Is $\Theta(2^n)$ equivalent to $\Theta(3^n)$?  Either prove they are identical, or prove they are different.}
+\begin{shortexercise}
+Repeat Exercise~\ref{ex:bigo} using $\Theta$ instead of $O$.
+\solution{
+This follows from our previous results --- to be in $\Theta(n)$, $g(n)$ must be in both $O(n)$ and $\Omega(n)$. So, (a) $g(n) = n + 5$, (b) $g(n) = 0.01n$, and (c) $g(n) = 150n + \sqrt(n)$ are all in $\Theta(n)$, but (d) $g(n) = n^{1.5}$ and (e) $g(n) = n!$ are not since they are not in $O(n)$.
+}
+\end{shortexercise}
+\begin{shortexercise}\label{exercise:thetan} 
+Show that $\Theta(n^2-n)$ is equivalent to $\Theta(n^2)$.
+\end{shortexercise}
+\begin{shortexercise}\goldstar 
+Is $\Theta(n^2)$ equivalent to $\Theta(n^{2.1})$?  Either prove they are identical, or prove they are different.
+\end{shortexercise}
+\begin{shortexercise}\goldstar 
+Is $\Theta(2^n)$ equivalent to $\Theta(3^n)$?  Either prove they are identical, or prove they are different.
+\end{shortexercise}
 
 %% Old chapter 8 starts here.
   
@@ -737,7 +783,7 @@ There are $n$ recursive applications, so the total running time of \scheme|list-
 If both input numbers have $n$ digits, there are $n^2$ digit multiplications, each of which can be done in constant time.  \sidepicturenocap{0.5}{images/multiplication-iStock_000003661783Small.jpg}
 The intermediate results will be $n$ rows, each containing $n$ digits.  So, the total number of digits to add is $n^2$: 1 digit in the ones place, 2 digits in the tens place, $\ldots$, $n$ digits in the $10^{n-1}$s place, $\ldots$, 2 digits in the $10^{2n-3}$s place, and 1 digit in the $10^{2n-2}$s place.  Each digit addition requires constant work, so the total work for all the digit additions is in $\Theta(n^2)$.  Adding the work for both the digit multiplications and the digit additions, the total running time for the elementary school multiplication algorithm is quadratic in the number of input digits, $\Theta(n^2)$ where $n$ is the number if digits in the inputs.
 
-This is not the fastest known algorithm for multiplying two numbers, although it was the best algorithm known until 1960.  In 1960, Anatolii Karatsuba discovers a multiplication algorithm with running time in $\Theta(n^{\log_2 3})$.  Since $\log_2 3 < 1.585$ this is an improvement over the $\Theta(n^2)$ elementary school algorithm.  In 2007, Martin F\"{u}rer discovered an even faster algorithm for multiplication.\footnote{Martin F\"{u}rer, Faster Integer Multiplication, \emph{ACM Symposium on Theory of Computing}, 2007.}  It is not yet known if this is the fastest possible multiplication algorithm, or if faster ones exist. 
+This is not the fastest known algorithm for multiplying two numbers, although it was the best algorithm known until 1960 when Anatolii Karatsuba discovered a multiplication algorithm with running time in $\Theta(n^{\log_2 3})$.  Since $\log_2 3 < 1.585$ this is an improvement over the $\Theta(n^2)$ elementary school algorithm.  In 2007, Martin F\"{u}rer discovered an even faster algorithm for multiplication\footnote{Martin F\"{u}rer, Faster Integer Multiplication, \emph{ACM Symposium on Theory of Computing}, 2007.}, but it is not yet known what is the fastest possible multiplication algorithm. 
  
 \end{examplenobar}
 
